@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercultural Communication Guide</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --radius: 8px;
+            --spacing-sm: 10px;
+            --spacing-md: 20px;
+            --spacing-lg: 30px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            padding: 0;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: white;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+        }
+        
+        h3 {
+            font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+            color: var(--dark);
+            margin-top: var(--spacing-lg);
+        }
+        
+        h4 {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(1rem, 2.5vw, 1.05rem);
+        }
+        
+        /* ===== LAYOUT ===== */
+        .container {
+            width: 100%;
+            padding: var(--spacing-md);
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: var(--spacing-lg);
+            }
+        }
+        
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.9;
+            margin-top: var(--spacing-sm);
+        }
+        
+        /* ===== CONCEPT CARDS ===== */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+        
+        @media (min-width: 768px) {
+            .concept-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .concept-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .concept-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+        
+        .concept-card:active {
+            transform: translateY(-2px);
+        }
+        
+        /* ===== EXPANDABLE SECTIONS ===== */
+        .expandable {
+            background: white;
+            border-radius: var(--radius);
+            margin: var(--spacing-md) 0;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .expandable-header {
+            background: var(--light);
+            padding: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .expandable-content {
+            padding: 0 var(--spacing-md);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .expandable-content.active {
+            max-height: 2000px;
+            padding: var(--spacing-md);
+        }
+        
+        .expandable-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .expandable-icon.active {
+            transform: rotate(180deg);
+        }
+        
+        /* ===== EXAMPLES ===== */
+        .example {
+            background: #e8f4fc;
+            border-left: 4px solid var(--secondary);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .example-title::before {
+            content: "💡";
+            margin-right: var(--spacing-sm);
+        }
+        
+        /* ===== SCENARIOS ===== */
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        @media (min-width: 768px) {
+            .scenario-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .scenario-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--success);
+        }
+        
+        .scenario-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-right: var(--spacing-sm);
+        }
+        
+        .analysis {
+            background: #f1f8e9;
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--success);
+        }
+        
+        .analysis-title {
+            font-weight: 600;
+            color: #2e7d32;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* ===== KEYWORDS ===== */
+        .keyword {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin: 0 2px;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .nav-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-lg) 0;
+            flex-wrap: wrap;
+        }
+        
+        .nav-button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .nav-button:active {
+            background: var(--primary);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: var(--spacing-lg);
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: var(--spacing-lg);
+        }
+        
+        /* ===== UTILITY ===== */
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .important {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        /* ===== EXAM ALERT ===== */
+        .exam-alert {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 6px solid var(--warning);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--radius);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Intercultural Communication</h1>
+        <p class="subtitle">M1 Didactics - Mobile Study Guide</p>
+        <p>Tap cards to learn • Scroll to explore</p>
+    </header>
+
+    <div class="container">
+        <!-- PART 1: KEY CONCEPTS -->
+        <section>
+            <h2>Core Concepts Explained Simply</h2>
+            
+            <!-- Concept 1: What is Intercultural Communication? -->
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h4>1. What IS Intercultural Communication?</h4>
+                    <span class="expandable-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>It's how people from <span class="keyword">different cultural backgrounds</span> talk, understand, and connect with each other.</p>
+                    
+                    <div class="example">
+                        <div class="example-title">Real Example:</div>
+                        <p>An Algerian student emails a German professor. The student uses polite, indirect language (typical in Algeria). The professor replies with very direct, short sentences (typical in Germany). Both might feel confused by the other's style.</p>
+                    </div>
+                    
+                    <p><strong>Key Idea:</strong> It's not just about language, but about <span class="highlight">how culture shapes everything we say and understand</span>.</p>
+                    
+                    <p><strong>Why it matters for teachers:</strong> In today's diverse classrooms, understanding these differences helps prevent misunderstandings and builds respect.</p>
+                </div>
+            </div>
+            
+            <!-- Concept 2: Culture is NOT Fixed -->
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h4>2. Culture is NOT Fixed (Important!)</h4>
+                    <span class="expandable-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p><span class="important">Old thinking:</span> Culture = fixed national box (Algerian culture, French culture).</p>
+                    <p><span class="important">New understanding:</span> Culture is <span class="keyword">fluid</span>, <span class="keyword">changing</span>, and <span class="keyword">mixed</span>.</p>
+                    
+                    <div class="example">
+                        <div class="example-title">Think about yourself:</div>
+                        <p>You probably have:</p>
+                        <ul>
+                            <li><span class="keyword">Family culture</span> (how you act at home)</li>
+                            <li><span class="keyword">School culture</span> (how you act with teachers)</li>
+                            <li><span class="keyword">Friend culture</span> (how you act with peers)</li>
+                            <li><span class="keyword">Online culture</span> (how you act on social media)</li>
+                        </ul>
+                        <p>You switch between these naturally! That's culture being fluid.</p>
+                    </div>
+                    
+                    <p><strong>Key Idea:</strong> People don't have ONE culture. We all have multiple, shifting cultural identities.</p>
+                </div>
+            </div>
+            
+            <!-- Concept 3: High vs Low Context -->
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h4>3. High-Context vs Low-Context (Hall's Theory)</h4>
+                    <span class="expandable-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p><span class="keyword">High-Context Cultures</span> (like Algeria, Japan, Arab countries):</p>
+                    <ul>
+                        <li>Meaning is in the <span class="highlight">situation</span>, relationships, and non-verbal cues</li>
+                        <li>Communication is <span class="highlight">indirect</span>, polite</li>
+                        <li>You need to "read between the lines"</li>
+                        <li>Relationships matter more than tasks</li>
+                    </ul>
+                    
+                    <p><span class="keyword">Low-Context Cultures</span> (like USA, Germany, Scandinavia):</p>
+                    <ul>
+                        <li>Meaning is in the <span class="highlight">words themselves</span></li>
+                        <li>Communication is <span class="highlight">direct</span>, clear</li>
+                        <li>Saying exactly what you mean is valued</li>
+                        <li>Tasks matter more than relationships</li>
+                    </ul>
+                    
+                    <div class="example">
+                        <div class="example-title">Classroom Example:</div>
+                        <p>In a <span class="keyword">high-context</span> classroom, a teacher might say "Maybe some students could be quieter" instead of naming the noisy student directly. Students understand who is meant.</p>
+                        <p>In a <span class="keyword">low-context</span> classroom, the teacher would say "Ahmed, please stop talking."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Concept 4: Hofstede's Dimensions -->
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h4>4. Hofstede's 6 Cultural Dimensions</h4>
+                    <span class="expandable-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>Six ways cultures differ that affect how people communicate:</p>
+                    
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>1. Power Distance</h4>
+                            <p>How societies handle inequality.</p>
+                            <p><strong>High:</strong> Respect hierarchy, don't question teachers (Malaysia, Arab world)</p>
+                            <p><strong>Low:</strong> Prefer equality, question authority (Denmark, Israel)</p>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>2. Individualism vs Collectivism</h4>
+                            <p>"I" vs "We" thinking.</p>
+                            <p><strong>Individualist:</strong> USA, UK - personal goals first</p>
+                            <p><strong>Collectivist:</strong> Algeria, China - group harmony first</p>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>3. Uncertainty Avoidance</h4>
+                            <p>Need for rules vs flexibility.</p>
+                            <p><strong>High:</strong> Japan, Greece - need clear rules</p>
+                            <p><strong>Low:</strong> Singapore, Jamaica - comfortable with ambiguity</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="example-title">How this affects learning:</div>
+                        <p>In <span class="keyword">collectivist</span> cultures, group work comes naturally. In <span class="keyword">individualist</span> cultures, students prefer working alone and being graded individually.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Concept 5: Intercultural Speaker -->
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h4>5. The "Intercultural Speaker" (New Goal)</h4>
+                    <span class="expandable-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p><span class="important">Old goal:</span> Sound like a native English speaker.</p>
+                    <p><span class="important">New goal:</span> Become an <span class="keyword">intercultural speaker</span>.</p>
+                    
+                    <p>An intercultural speaker can:</p>
+                    <ul>
+                        <li><span class="highlight">Explain</span> their own culture to others</li>
+                        <li><span class="highlight">Understand</span> different cultural perspectives</li>
+                        <li><span class="highlight">Adapt</span> communication style as needed</li>
+                        <li><span class="highlight">Mediate</span> between cultures</li>
+                        <li>Feel comfortable in <span class="keyword">in-between spaces</span></li>
+                    </ul>
+                    
+                    <div class="example">
+                        <div class="example-title">You as an intercultural speaker:</div>
+                        <p>Imagine explaining Ramadan to a non-Muslim classmate, or helping an Algerian friend understand why their German colleague is so direct. That's being an intercultural speaker!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Concept 6: Globalization Effects -->
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h4>6. Globalization & "Scapes" (Appadurai)</h4>
+                    <span class="expandable-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>Globalization isn't one thing - it's 5 flows that mix cultures:</p>
+                    
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>Ethnoscapes</h4>
+                            <p>Movement of PEOPLE (migrants, students, tourists)</p>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>Mediascapes</h4>
+                            <p>Flow of MEDIA (Netflix, social media, news)</p>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>Technoscapes</h4>
+                            <p>Spread of TECHNOLOGY (apps, Zoom, AI)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="example-title">You live in this:</div>
+                        <p>You (Algerian) watch Korean dramas on Netflix (mediascape), use TikTok trends from the USA (technoscape), and have friends studying in France (ethnoscape). Your culture is constantly mixing with others!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Concept 7: Culture Shock -->
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpand(this)">
+                    <h4>7. Culture Shock - It's Normal!</h4>
+                    <span class="expandable-icon">▼</span>
+                </div>
+                <div class="expandable-content">
+                    <p>4 stages everyone goes through in a new culture:</p>
+                    
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4>Stage 1: Honeymoon</h4>
+                            <p>"Everything is exciting and new!"</p>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>Stage 2: Frustration</h4>
+                            <p>"Nothing makes sense here. I want to go home!"</p>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>Stage 3: Adjustment</h4>
+                            <p>"OK, I'm starting to understand how things work."</p>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>Stage 4: Adaptation</h4>
+                            <p>"I feel at home here now. I understand both cultures."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <div class="example-title">For students abroad:</div>
+                        <p>First month in France: "Everything is wonderful!" (Honeymoon)</p>
+                        <p>Third month: "Why is everyone so cold? The food is strange!" (Frustration)</p>
+                        <p>Sixth month: "I'm making friends, understanding the system" (Adjustment)</p>
+                        <p>One year: "I feel Algerian AND comfortable in France" (Adaptation)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <!-- PART 2: SCENARIOS -->
+        <section>
+            <h2>10 Common Scenarios & Analysis</h2>
+            
+            <div class="exam-alert">
+                Exam Tip: For each scenario, identify 2-3 key concepts from above.
+            </div>
+            
+            <div class="scenario-grid">
+                <!-- Scenario 1 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">1</span>
+                        Silent Student
+                    </div>
+                    <p><strong>Situation:</strong> Chinese student never speaks in class. American teacher thinks she's not participating.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">High Power Distance</span> + <span class="keyword">High-Context</span>. Speaking without permission = disrespect. Listening carefully = participation in her culture.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 2 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">2</span>
+                        Direct Email Problem
+                    </div>
+                    <p><strong>Situation:</strong> German manager sends blunt email. Algerian team feels offended by rude tone.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Low-Context vs High-Context</span>. German directness = efficiency. Algerian expectation = polite, indirect framing first.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 3 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">3</span>
+                        Missed Deadline
+                    </div>
+                    <p><strong>Situation:</strong> Spanish contractor misses deadline due to family issues. Algerian manager sees as unprofessional.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Polychronic time</span> (fluid) vs <span class="keyword">Monochronic time</span> (fixed). Family > deadlines in some cultures.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 4 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">4</span>
+                        Virtual Misunderstanding
+                    </div>
+                    <p><strong>Situation:</strong> On Zoom, British boss says "interesting idea" then moves on. Indian employee thinks it was approved.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">High-Context in digital space</span> + <span class="keyword">British indirectness</span>. "Interesting" often means "not good" in UK English.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 5 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">5</span>
+                        Gift Refusal Confusion
+                    </div>
+                    <p><strong>Situation:</strong> Japanese offers gift. Algerian refuses politely (expecting insistence). Japanese accepts refusal, feels rejected.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Different cultural scripts</span>. Both have gift rituals, but the steps differ. Need to learn each other's "dance."</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 6 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">6</span>
+                        "Yes" Means "No"
+                    </div>
+                    <p><strong>Situation:</strong> Filipino assistant always says "yes" to requests. American boss frustrated when work isn't done.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">High Power Distance</span> + <span class="keyword">Face-saving</span>. Saying "no" to boss = disrespect. Harmony > honesty.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 7 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">7</span>
+                        Team Conflict
+                    </div>
+                    <p><strong>Situation:</strong> German/American want to divide tasks. Saudi/Korean want group meetings first. Both think other is wasting time.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Individualism vs Collectivism</span>. Task-first vs relationship-first approaches.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 8 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">8</span>
+                        Classroom Debate Tension
+                    </div>
+                    <p><strong>Situation:</strong> French teacher debates secularism openly. Muslim students stay silent, uncomfortable.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Ideoscapes clash</span>. Some topics are "academic debate" vs "personal sacred values."</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 9 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">9</span>
+                        Hybrid Identity Struggle
+                    </div>
+                    <p><strong>Situation:</strong> French-Algerian student told she's "not Algerian enough" in Algeria, "not French enough" in France.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Fluid culture</span> + <span class="keyword">Third space</span>. She's creating her own identity between cultures.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 10 -->
+                <div class="scenario-card">
+                    <div class="scenario-title">
+                        <span class="scenario-number">10</span>
+                        Social Media Backlash
+                    </div>
+                    <p><strong>Situation:</strong> Swedish brand posts revealing sportswear ad in Algeria. "Empowerment" message fails, seen as disrespectful.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Global vs local values</span> + <span class="keyword">Mediascapes</span>. Universal marketing fails without cultural adaptation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exam-alert">
+                <strong>Essay Writing Tip:</strong> Start with "This scenario shows [concept]. According to [theory], this happens because..." Then give examples and suggest solutions.
+            </div>
+        </section>
+        
+        <!-- NAVIGATION -->
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to Top</button>
+            <button class="nav-button" onclick="expandAll()">Expand All Sections</button>
+            <button class="nav-button" onclick="collapseAll()">Collapse All</button>
+        </div>
+        
+        <footer>
+            <p>M1 Didactics - Intercultural Communication</p>
+            <p>Study Guide for Mobile • Based on Lectures 1, 2, 3</p>
+            <p>Tap sections to expand • Scroll for more</p>
+        </footer>
+    </div>
+
+    <script>
+        // Expandable sections functionality
+        function toggleExpand(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.expandable-icon');
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+        
+        function expandAll() {
+            document.querySelectorAll('.expandable-content').forEach(content => {
+                content.classList.add('active');
+            });
+            document.querySelectorAll('.expandable-icon').forEach(icon => {
+                icon.classList.add('active');
+            });
+        }
+        
+        function collapseAll() {
+            document.querySelectorAll('.expandable-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.expandable-icon').forEach(icon => {
+                icon.classList.remove('active');
+            });
+        }
+        
+        // Mobile touch improvements
+        document.addEventListener('touchstart', function() {}, {passive: true});
+        
+        // Auto-expand first section on load
+        window.addEventListener('load', function() {
+            const firstHeader = document.querySelector('.expandable-header');
+            if (firstHeader && window.innerWidth < 768) {
+                toggleExpand(firstHeader);
+            }
+        });
+    </script>
+</body>
+</html>
