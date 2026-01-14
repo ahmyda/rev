@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercultural Communication - Complete Guide</title>
+    <style>
+        /* ===== MOBILE-FIRST BASE ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        :root {
+            --primary-blue: #1a237e;
+            --secondary-blue: #3949ab;
+            --accent-red: #d32f2f;
+            --light-gray: #f5f5f5;
+            --medium-gray: #eeeeee;
+            --dark-gray: #424242;
+            --green: #388e3c;
+            --orange: #f57c00;
+            --purple: #7b1fa2;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 10px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #fafafa;
+            padding-bottom: 40px;
+            overflow-x: hidden;
+        }
+        
+        /* ===== TYPOGRAPHY FOR MOBILE ===== */
+        h1 {
+            font-size: clamp(1.8rem, 6vw, 2.2rem);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        h2 {
+            font-size: clamp(1.4rem, 5vw, 1.8rem);
+            font-weight: 700;
+            margin: var(--spacing-lg) 0 var(--spacing-md);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: 3px solid var(--secondary-blue);
+            color: var(--primary-blue);
+        }
+        
+        h3 {
+            font-size: clamp(1.2rem, 4vw, 1.4rem);
+            font-weight: 600;
+            margin: var(--spacing-md) 0 var(--spacing-sm);
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        h3::before {
+            content: "•";
+            color: var(--secondary-blue);
+            font-size: 1.5em;
+        }
+        
+        h4 {
+            font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+            font-weight: 600;
+            margin: var(--spacing-sm) 0 var(--spacing-xs);
+            color: var(--secondary-blue);
+        }
+        
+        p {
+            font-size: clamp(0.95rem, 3vw, 1rem);
+            margin-bottom: var(--spacing-sm);
+            text-align: justify;
+        }
+        
+        /* ===== LAYOUT ===== */
+        .page {
+            max-width: 100%;
+            padding: var(--spacing-md);
+        }
+        
+        @media (min-width: 768px) {
+            .page {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: var(--spacing-lg);
+            }
+        }
+        
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            border-radius: 0 0 var(--radius) var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: var(--spacing-lg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .subtitle {
+            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            opacity: 0.9;
+            margin-top: var(--spacing-xs);
+        }
+        
+        /* ===== CONTENT CARDS ===== */
+        .section {
+            background: white;
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary-blue);
+        }
+        
+        .sub-section {
+            background: var(--light-gray);
+            border-radius: var(--radius);
+            padding: var(--spacing-sm);
+            margin: var(--spacing-sm) 0;
+            border-left: 3px solid var(--accent-red);
+        }
+        
+        /* ===== ACCORDION SYSTEM ===== */
+        .accordion {
+            margin: var(--spacing-md) 0;
+        }
+        
+        .accordion-item {
+            background: white;
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-sm);
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .accordion-header {
+            background: var(--medium-gray);
+            padding: var(--spacing-sm) var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            border-left: 4px solid var(--green);
+        }
+        
+        .accordion-header h4 {
+            margin: 0;
+            color: var(--primary-blue);
+            flex: 1;
+        }
+        
+        .accordion-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2em;
+            color: var(--primary-blue);
+        }
+        
+        .accordion-content {
+            padding: 0 var(--spacing-md);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 2000px;
+            padding: var(--spacing-md);
+        }
+        
+        /* ===== KEY ELEMENTS ===== */
+        .keyword {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin: 2px;
+            border: 1px solid #bbdefb;
+        }
+        
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .important {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+        
+        .theory-tag {
+            display: inline-block;
+            background: var(--purple);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: var(--spacing-xs);
+            font-weight: 500;
+        }
+        
+        /* ===== LISTS ===== */
+        ul, ol {
+            margin-left: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        li {
+            margin-bottom: var(--spacing-xs);
+            font-size: clamp(0.95rem, 3vw, 1rem);
+        }
+        
+        /* ===== EXAMPLES ===== */
+        .example {
+            background: #e8f5e9;
+            border-left: 4px solid var(--green);
+            padding: var(--spacing-sm);
+            margin: var(--spacing-sm) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: #1b5e20;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .example-title::before {
+            content: "📌";
+        }
+        
+        /* ===== SCENARIOS ===== */
+        .scenario-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        @media (min-width: 600px) {
+            .scenario-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .scenario {
+            background: white;
+            border-radius: var(--radius);
+            padding: var(--spacing-sm);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--orange);
+        }
+        
+        .scenario-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--orange);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: var(--spacing-xs);
+        }
+        
+        .scenario-title {
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+        }
+        
+        .analysis {
+            background: #f3e5f5;
+            padding: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+            border-radius: var(--radius);
+            border-left: 3px solid var(--purple);
+        }
+        
+        .analysis-title {
+            font-weight: 600;
+            color: var(--purple);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .analysis-title::before {
+            content: "🔍";
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-lg) 0;
+            justify-content: center;
+        }
+        
+        .nav-btn {
+            background: var(--secondary-blue);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .nav-btn:active {
+            transform: scale(0.98);
+            background: var(--primary-blue);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-lg);
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+            margin-top: var(--spacing-lg);
+        }
+        
+        /* ===== UTILITY ===== */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ccc, transparent);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .reference {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: var(--spacing-xs);
+        }
+        
+        /* ===== TOUCH OPTIMIZATIONS ===== */
+        @media (hover: none) {
+            .accordion-header:active {
+                background: #e0e0e0;
+            }
+            
+            .nav-btn:active {
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Intercultural Communication</h1>
+        <p class="subtitle">Complete M1 Study Guide - All Concepts Covered</p>
+        <p class="subtitle">Tap to expand sections • Swipe to scroll</p>
+    </div>
+
+    <div class="page">
+        <!-- QUICK NAVIGATION -->
+        <div class="quick-nav">
+            <button class="nav-btn" onclick="scrollToSection('definitions')">1. Definitions</button>
+            <button class="nav-btn" onclick="scrollToSection('components')">2. Components</button>
+            <button class="nav-btn" onclick="scrollToSection('theories')">3. Theories</button>
+            <button class="nav-btn" onclick="scrollToSection('didactics')">4. Didactics</button>
+            <button class="nav-btn" onclick="scrollToSection('global')">5. Global View</button>
+            <button class="nav-btn" onclick="scrollToSection('intercultural-speaker')">6. Intercultural Speaker</button>
+            <button class="nav-btn" onclick="scrollToSection('scenarios')">7. Scenarios</button>
+        </div>
+
+        <!-- SECTION 1: DEFINITIONS -->
+        <section id="definitions" class="section">
+            <h2>📚 1. Core Definitions (Lecture 1)</h2>
+            
+            <div class="accordion">
+                <!-- Definition 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Intercultural Communication</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="keyword">Definition:</span> The exchange of information between individuals or groups from different cultural backgrounds.</p>
+                        <p><span class="important">Key Points:</span></p>
+                        <ul>
+                            <li>It's both a <span class="highlight">process</span> and a <span class="highlight">skill</span> (Samovar, Porter, & McDaniel, 2015)</li>
+                            <li>Involves understanding how culture affects communication</li>
+                            <li>Essential in today's globalized world</li>
+                        </ul>
+                        <div class="example">
+                            <div class="example-title">Example:</div>
+                            <p>An Algerian teacher explaining a concept to a Chinese student must consider different learning styles, communication norms, and cultural references.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Definition 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Culture</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="keyword">Traditional View:</span> A shared system of meanings, values, and practices that shape perception <span class="theory-tag">Hall, 1976</span>.</p>
+                        <p><span class="important">Modern View (Lecture 3):</span> Culture is <span class="highlight">fluid</span>, <span class="highlight">hybrid</span>, and constantly changing.</p>
+                        <ul>
+                            <li>Not tied to nations only</li>
+                            <li>Includes everyday practices, beliefs, shifting identities</li>
+                            <li>Influenced by globalization</li>
+                        </ul>
+                        <div class="example">
+                            <div class="example-title">Example from Algerian Context:</div>
+                            <p>A student might speak formal Arabic in class, use Darija with friends, and simplified English online with international peers. This shows multiple cultural identities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Definition 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Interculturality</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="keyword">Beyond simple contact:</span> Involves questioning assumptions and analyzing power relations <span class="theory-tag">Byram, 1997; Kramsch, 1998</span>.</p>
+                        <p><span class="important">Key Aspects:</span></p>
+                        <ul>
+                            <li>Deconstructing stereotypes</li>
+                            <li>Understanding negotiated identities</li>
+                            <li>Analyzing who dominates communication</li>
+                        </ul>
+                        <div class="example">
+                            <div class="example-title">Example:</div>
+                            <p>When Algerian and French colleagues work together, whose meeting style dominates? Who has to adapt more? These power dynamics are part of interculturality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: KEY COMPONENTS -->
+        <section id="components" class="section">
+            <h2>🧩 2. Key Components of Intercultural Communication</h2>
+            
+            <div class="accordion">
+                <!-- Component 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>1. Culture as Meaning System</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Culture shapes how we see the world. It's not just traditions, but our <span class="highlight">mental programming</span>.</p>
+                        <p><span class="important">In communication:</span> Culture affects what we say, how we say it, and how we interpret others.</p>
+                    </div>
+                </div>
+                
+                <!-- Component 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>2. Communication Process</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Symbolic process of sharing meaning through:</p>
+                        <ul>
+                            <li><span class="keyword">Verbal</span> messages (words)</li>
+                            <li><span class="keyword">Non-verbal</span> messages (gestures, tone, silence)</li>
+                        </ul>
+                        <p><span class="important">Cross-culturally:</span> Same behavior can have different meanings in different cultures.</p>
+                        <div class="example">
+                            <div class="example-title">Example:</div>
+                            <p>Eye contact = confidence (Western) vs disrespect (some East Asian cultures). Silence = disagreement (some cultures) vs respect/thinking (others).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Component 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>3. Context</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The setting where communication happens, including:</p>
+                        <ul>
+                            <li><span class="keyword">Situational</span> context (where, when)</li>
+                            <li><span class="keyword">Relational</span> context (who's speaking to whom)</li>
+                            <li><span class="keyword">Cultural</span> context (cultural norms)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Component 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>4. Intercultural Competence</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="keyword">Definition:</span> Ability to interact effectively and appropriately with people from different cultures <span class="theory-tag">Deardorff, 2006</span>.</p>
+                        <p><span class="important">Includes:</span></p>
+                        <ul>
+                            <li><span class="highlight">Knowledge</span> of cultures</li>
+                            <li><span class="highlight">Skills</span> to adapt communication</li>
+                            <li><span class="highlight">Attitudes</span> of openness and respect</li>
+                            <li><span class="highlight">Internal outcomes</span> (flexible thinking)</li>
+                            <li><span class="highlight">External outcomes</span> (effective behavior)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THEORETICAL PERSPECTIVES -->
+        <section id="theories" class="section">
+            <h2>🎓 3. Theoretical Perspectives</h2>
+            
+            <h3>Major Theories (from Lectures 1 & 2)</h3>
+            
+            <div class="accordion">
+                <!-- Theory 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Hall's High- vs Low-Context Cultures <span class="theory-tag">1976</span></h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="keyword">High-Context Cultures:</span> Rely on implicit messages, body language, shared knowledge.</p>
+                        <ul>
+                            <li><strong>Examples:</strong> Japan, Arab countries, Algeria</li>
+                            <li><strong>Communication:</strong> Indirect, polite, relationship-focused</li>
+                            <li><strong>"Read between the lines"</strong></li>
+                        </ul>
+                        
+                        <p><span class="keyword">Low-Context Cultures:</span> Prefer direct, explicit verbal messages.</p>
+                        <ul>
+                            <li><strong>Examples:</strong> USA, Germany, Switzerland</li>
+                            <li><strong>Communication:</strong> Direct, clear, task-focused</li>
+                            <li><strong>"Say what you mean"</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Theory 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Hofstede's 6 Cultural Dimensions <span class="theory-tag">2001</span></h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Six value dimensions that explain cultural differences:</p>
+                        <div class="sub-section">
+                            <h4>1. Power Distance (PDI)</h4>
+                            <p>Acceptance of hierarchy vs preference for equality.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>2. Individualism vs Collectivism (IDV)</h4>
+                            <p>"I" vs "We" orientation.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>3. Masculinity vs Femininity (MAS)</h4>
+                            <p>Competition vs care orientation.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>4. Uncertainty Avoidance (UAI)</h4>
+                            <p>Need for rules vs comfort with ambiguity.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>5. Long-term vs Short-term Orientation (LTO)</h4>
+                            <p>Future focus vs tradition focus.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>6. Indulgence vs Restraint (IVR)</h4>
+                            <p>Allowance for enjoyment vs discipline.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Theory 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Gudykunst's Anxiety/Uncertainty Management <span class="theory-tag">2005</span></h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Focuses on managing the anxiety and uncertainty we feel in intercultural encounters.</p>
+                        <p><span class="important">Key idea:</span> Effective communication requires managing these feelings, not eliminating them.</p>
+                    </div>
+                </div>
+                
+                <!-- Theory 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Appadurai's Global Cultural Flows (Scapes) <span class="theory-tag">1996</span></h4>
+                        <span class="accordicon-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Globalization as 5 interconnected flows:</p>
+                        <ul>
+                            <li><span class="keyword">Ethnoscapes:</span> Movement of people</li>
+                            <li><span class="keyword">Mediascapes:</span> Flow of media/images</li>
+                            <li><span class="keyword">Technoscapes:</span> Spread of technology</li>
+                            <li><span class="keyword">Financescapes:</span> Movement of money</li>
+                            <li><span class="keyword">Ideoscapes:</span> Flow of ideas/ideologies</li>
+                        </ul>
+                        <p><span class="important">Key idea:</span> Cultures are constantly remixed through these global flows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERCULTURAL COMMUNICATION IN DIDACTICS -->
+        <section id="didactics" class="section">
+            <h2>🏫 4. Intercultural Communication in Didactics</h2>
+            
+            <div class="accordion">
+                <!-- Didactics 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Why It Matters for Teachers</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Essential for creating inclusive, culturally responsive learning environments.</p>
+                        <p><span class="important">Benefits:</span></p>
+                        <ul>
+                            <li>Promotes mutual respect among diverse students</li>
+                            <li>Reduces prejudice and stereotyping</li>
+                            <li>Improves classroom interaction</li>
+                            <li>Prepares students for global citizenship</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Didactics 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Byram's Intercultural Communicative Competence (ICC) <span class="theory-tag">1997</span></h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>A model that transformed language teaching:</p>
+                        <div class="sub-section">
+                            <h4>Five Savoirs (Knowledges):</h4>
+                            <ol>
+                                <li><span class="keyword">Savoir être:</span> Attitudes (openness, curiosity)</li>
+                                <li><span class="keyword">Savoir apprendre:</span> Skills of discovery</li>
+                                <li><span class="keyword">Savoirs:</span> Knowledge about cultures</li>
+                                <li><span class="keyword">Savoir faire:</span> Skills to interact</li>
+                                <li><span class="keyword">Savoir s'engager:</span> Critical cultural awareness</li>
+                            </ol>
+                        </div>
+                        <p><span class="important">Impact:</span> Shifted focus from just language accuracy to cultural understanding and mediation.</p>
+                    </div>
+                </div>
+                
+                <!-- Didactics 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>From Language Teaching to Global Competence</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="important">Traditional approach:</span> Teach language + facts about target culture.</p>
+                        <p><span class="important">Modern approach:</span> Develop students' ability to:</p>
+                        <ul>
+                            <li>Navigate between cultures</li>
+                            <li>Mediate misunderstandings</li>
+                            <li>Think critically about cultural issues</li>
+                            <li>Participate in global communities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: GLOBAL PERSPECTIVE -->
+        <section id="global" class="section">
+            <h2>🌍 5. Global Perspective (Lecture 2)</h2>
+            
+            <div class="accordion">
+                <!-- Global 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Globalization's Impact</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="keyword">Globalization</span> = Increasing interconnectedness worldwide.</p>
+                        <p><span class="important">Effects on communication:</span></p>
+                        <ul>
+                            <li>More frequent cross-cultural contact</li>
+                            <li>Virtual exchanges without physical travel</li>
+                            <li>Cultural hybridization (mixing of cultures)</li>
+                            <li>Digital communication as routine</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Global 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>English as Global Lingua Franca</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>English as the dominant international language <span class="theory-tag">Crystal, 2003</span>.</p>
+                        <p><span class="important">Positive:</span> Facilitates global understanding.</p>
+                        <p><span class="important">Challenges:</span></p>
+                        <ul>
+                            <li>Cultural/linguistic dominance</li>
+                            <li>Marginalization of smaller languages</li>
+                            <li>Need for intercultural awareness WITH language skills</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Global 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Digital Intercultural Communication</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Virtual environments add complexity:</p>
+                        <ul>
+                            <li>Missing non-verbal cues (body language, tone)</li>
+                            <li>Higher risk of misunderstandings</li>
+                            <li>Need for extra clarity and empathy</li>
+                        </ul>
+                        <div class="example">
+                            <div class="example-title">Example:</div>
+                            <p>A sarcastic comment in a text message can be misinterpreted without vocal tone or facial expressions to show it's a joke.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Global 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Challenges in Global Communication</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="sub-section">
+                            <h4>Stereotypes & Prejudice</h4>
+                            <p>Oversimplified beliefs about groups that create barriers.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>Ethnocentrism</h4>
+                            <p>Believing one's own culture is superior, judging others by own norms.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>Culture Shock (4 Stages)</h4>
+                            <ol>
+                                <li><span class="keyword">Honeymoon:</span> Excitement</li>
+                                <li><span class="keyword">Frustration:</span> Anxiety</li>
+                                <li><span class="keyword">Adjustment:</span> Adaptation</li>
+                                <li><span class="keyword">Adaptation:</span> Bicultural competence</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: INTERCULTURAL SPEAKER -->
+        <section id="intercultural-speaker" class="section">
+            <h2>💬 6. The Intercultural Speaker (Lecture 3)</h2>
+            
+            <div class="accordion">
+                <!-- Speaker 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>From "Native Speaker" to "Intercultural Speaker"</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="important">Old ideal:</span> Sound like a native speaker.</p>
+                        <p><span class="important">New ideal:</span> Become an intercultural speaker who can:</p>
+                        <ul>
+                            <li>Mediate between cultures</li>
+                            <li>Explain cultural differences</li>
+                            <li>Navigate "in-between" spaces</li>
+                            <li>Adapt communication style</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Speaker 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>The "Inter" Space Concept</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The crucial zone where cultures meet and interact <span class="theory-tag">Kramsch, 2009</span>.</p>
+                        <p><span class="important">Characteristics:</span></p>
+                        <ul>
+                            <li>Communication is co-constructed here</li>
+                            <li>Identities are negotiated</li>
+                            <li>Misunderstandings become learning opportunities</li>
+                            <li>Meaning is created together</li>
+                        </ul>
+                        <div class="example">
+                            <div class="example-title">Example:</div>
+                            <p>An Algerian freelancer and German client don't use purely Algerian or German communication. They create a hybrid style specific to their working relationship.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Three Meanings of "Intercultural"</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="sub-section">
+                            <h4>1. Intercultural Competence</h4>
+                            <p>Developing attitudes of curiosity, empathy, openness.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>2. Intercultural Communication</h4>
+                            <p>Interacting across cultural boundaries using language skills.</p>
+                        </div>
+                        <div class="sub-section">
+                            <h4>3. Intercultural Citizenship</h4>
+                            <p>Using language to participate ethically in global communities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Deconstructing Cultural Assumptions</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Critical process in intercultural education:</p>
+                        <ol>
+                            <li><span class="keyword">Question stereotypes:</span> "Do all British people really..."</li>
+                            <li><span class="keyword">Observe real interactions:</span> See how people actually communicate</li>
+                            <li><span class="keyword">Analyze power relations:</span> Whose norms dominate?</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- SECTION 7: SCENARIOS -->
+        <section id="scenarios" class="section">
+            <h2>🎭 7. Practical Scenarios & Analysis</h2>
+            <p class="subtitle">10 common intercultural situations with key concept analysis</p>
+            
+            <div class="scenario-container">
+                <!-- Scenario 1 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">1</span>Meeting Style Clash
+                    </div>
+                    <p>German manager wants quick, agenda-focused meetings. Algerian team expects relationship-building first.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Low-Context vs High-Context</span> + <span class="keyword">Task vs Relationship orientation</span></p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 2 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">2</span>Silence in Classroom
+                    </div>
+                    <p>Chinese student never speaks unless called on. American teacher thinks she's not participating.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">High Power Distance</span> + Different views of <span class="keyword">participation</span></p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 3 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">3</span>Email Misunderstanding
+                    </div>
+                    <p>Direct Dutch email offends indirect Japanese receiver who expects polite framing.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Direct vs Indirect communication</span> styles</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 4 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">4</span>Deadline Conflict
+                    </div>
+                    <p>Spanish team misses deadline for family event. German partner sees as unprofessional.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Monochronic vs Polychronic time</span> + <span class="keyword">Individualism vs Collectivism</span></p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 5 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">5</span>Virtual Team Issues
+                    </div>
+                    <p>On Zoom, team members from high-context cultures struggle without non-verbal cues.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Digital communication challenges</span> + <span class="keyword">High-context reliance</span></p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 6 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">6</span>Feedback Style
+                    </div>
+                    <p>American gives direct criticism. Algerian recipient feels publicly shamed.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Face-saving</span> + <span class="keyword">Public vs private feedback</span> norms</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 7 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">7</span>Group Work Conflict
+                    </div>
+                    <p>Individualist students want separate tasks. Collectivist students want consensus on everything.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Individualism vs Collectivism</span> in teamwork</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 8 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">8</span>Cultural Adaptation
+                    </div>
+                    <p>Algerian student in France goes through all 4 stages of culture shock.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Culture Shock stages</span> + <span class="keyword">Adaptation process</span></p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 9 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">9</span>Language Power Dynamics
+                    </div>
+                    <p>Meeting in English gives advantage to native speakers, marginalizes others.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">English as Lingua Franca</span> + <span class="keyword">Power relations</span></p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 10 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">10</span>Hybrid Identity
+                    </div>
+                    <p>French-Algerian student creates own communication style blending both cultures.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Concepts:</div>
+                        <p><span class="keyword">Intercultural Speaker</span> + <span class="keyword">Third Space</span> creation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exam-alert" style="background: #e3f2fd; border-left-color: #2196f3; margin-top: var(--spacing-lg);">
+                <h4>📝 Exam Essay Strategy:</h4>
+                <ol>
+                    <li><strong>Identify</strong> 2-3 key concepts from lectures</li>
+                    <li><strong>Apply</strong> theories to explain the situation</li>
+                    <li><strong>Suggest</strong> solutions using intercultural competence</li>
+                    <li><strong>Connect</strong> to educational implications</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- NAVIGATION BUTTONS -->
+        <div class="quick-nav" style="margin-top: var(--spacing-lg);">
+            <button class="nav-btn" onclick="expandAllSections()">Expand All</button>
+            <button class="nav-btn" onclick="collapseAllSections()">Collapse All</button>
+            <button class="nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
+        </div>
+
+        <footer class="footer">
+            <p>📚 M1 Didactics - Intercultural Communication</p>
+            <p>Complete Study Guide • All Lectures Covered • Mobile Optimized</p>
+            <p>Tap sections to expand • Use navigation buttons</p>
+        </footer>
+    </div>
+
+    <script>
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.accordion-icon');
+            
+            content.classList.toggle('active');
+            icon.textContent = content.classList.contains('active') ? '▲' : '▼';
+            
+            // Close other sections on mobile for better focus
+            if (window.innerWidth < 768) {
+                const allContents = document.querySelectorAll('.accordion-content');
+                const allIcons = document.querySelectorAll('.accordion-icon');
+                
+                allContents.forEach(item => {
+                    if (item !== content && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                allIcons.forEach(item => {
+                    if (item !== icon && item.textContent === '▲') {
+                        item.textContent = '▼';
+                    }
+                });
+            }
+        }
+        
+        // Navigation function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const yOffset = -80; // Account for sticky header
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
+        }
+        
+        // Expand/Collapse all
+        function expandAllSections() {
+            document.querySelectorAll('.accordion-content').forEach(content => {
+                content.classList.add('active');
+            });
+            document.querySelectorAll('.accordion-icon').forEach(icon => {
+                icon.textContent = '▲';
+            });
+        }
+        
+        function collapseAllSections() {
+            document.querySelectorAll('.accordion-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.accordion-icon').forEach(icon => {
+                icon.textContent = '▼';
+            });
+        }
+        
+        // Auto-expand first section on mobile for better UX
+        window.addEventListener('load', function() {
+            if (window.innerWidth < 768) {
+                const firstHeader = document.querySelector('.accordion-header');
+                if (firstHeader) {
+                    toggleAccordion(firstHeader);
+                }
+            }
+        });
+        
+        // Touch optimization
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
+</body>
+</html>
