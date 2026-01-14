@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercultural Communication: Comprehensive Guide & Scenarios</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        header {
+            background: linear-gradient(135deg, #1a237e, #3949ab);
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+        section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 45px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: #1a237e;
+            border-bottom: 4px solid #3949ab;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+        h3 {
+            color: #303f9f;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.7rem;
+            padding-left: 10px;
+            border-left: 5px solid #5c6bc0;
+        }
+        h4 {
+            color: #1565c0;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        p {
+            margin-bottom: 18px;
+            font-size: 1.08rem;
+            text-align: justify;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 25px;
+        }
+        li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-left: 6px solid #3949ab;
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border-top: 1px solid #e0e0e0;
+        }
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .theory-card {
+            background: #e8eaf6;
+            border-left: 6px solid #303f9f;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: 1px solid #d1d9ff;
+        }
+        .exam-alert {
+            background-color: #fff8e1;
+            border: 2px solid #ffd54f;
+            border-left: 8px solid #ff9800;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .example-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid #2196f3;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #0d47a1;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .example-title::before {
+            content: "💡";
+            margin-right: 10px;
+        }
+        .scenario-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .scenario-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-top: 5px solid #4caf50;
+            transition: transform 0.3s;
+        }
+        .scenario-card:hover {
+            transform: translateY(-5px);
+        }
+        .scenario-number {
+            display: inline-block;
+            background-color: #4caf50;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .scenario-title {
+            font-size: 1.3rem;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .analysis-box {
+            background-color: #f1f8e9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #7cb342;
+        }
+        .analysis-title {
+            font-weight: bold;
+            color: #33691e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .analysis-title::before {
+            content: "📊";
+            margin-right: 10px;
+        }
+        .keyword {
+            background-color: #e3f2fd;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: #0d47a1;
+            border: 1px solid #bbdefb;
+        }
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 5px;
+            font-weight: 600;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 25px;
+            color: #546e7a;
+            font-size: 0.95rem;
+            border-top: 1px solid #cfd8dc;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .nav-button {
+            background-color: #3949ab;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .nav-button:hover {
+            background-color: #303f9f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Intercultural Communication</h1>
+        <p class="subtitle">Master's Level Didactics - Complete Concept Guide with Practical Scenarios</p>
+        <p>Integrating Lectures 1, 2, and 3 | Expanded Details & Examples</p>
+    </header>
+
+    <section id="concepts">
+        <h2>Part 1: Comprehensive Key Concepts with Detailed Examples</h2>
+        
+        <h3>1. Core Definitions & Paradigm Shift</h3>
+        <div class="concept-grid">
+            <div class="concept-card">
+                <h4>Intercultural Communication: Beyond Exchange</h4>
+                <p>Not merely exchanging information but <span class="keyword">negotiating meaning</span> across cultural boundaries. As Gudykunst & Kim (2017) emphasize, it involves managing <span class="keyword">anxiety and uncertainty</span> that arise when familiar cultural scripts don't apply.</p>
+                <div class="example-box">
+                    <div class="example-title">Example from Lecture 2:</div>
+                    <p>An American manager emails a Japanese team with a direct request: "Finish the report by Friday." The Japanese team perceives this as rude because it lacks the expected relational framing. The American perceives their delayed response as avoidance. Both are communicating, but meaning is lost in cultural translation.</p>
+                </div>
+                <p><strong>Pedagogical Relevance:</strong> In didactics, this means teaching students not just language forms, but how to <span class="highlight">interpret intent</span> and <span class="highlight">adapt messages</span> for different cultural audiences.</p>
+            </div>
+            <div class="concept-card">
+                <h4>From "Culture" to "Interculturality"</h4>
+                <p><strong>Old View (Essentialist):</strong> Culture as a fixed national "box" (British culture = tea, queueing, Shakespeare).</p>
+                <p><strong>New View (Constructivist - Holliday, 2011):</strong> Culture as <span class="keyword">fluid</span>, <span class="keyword">hybrid</span>, and <span class="keyword">constructed</span> through practice. Individuals have multiple, shifting cultural affiliations.</p>
+                <div class="example-box">
+                    <div class="example-title">Algerian Context (Lecture 3):</div>
+                    <p>An Algerian student doesn't have one "Algerian" culture. They navigate: <em>Family culture</em> (respect for elders), <em>educational culture</em> (formal with teachers), <em>digital culture</em> (informal online English with global peers), and <em>professional culture</em> (when interning with a German company). Each context elicits different cultural performances.</p>
+                </div>
+            </div>
+            <div class="concept-card">
+                <h4>The "Inter" Space (Kramsch, 2009)</h4>
+                <p>The crucial <span class="keyword">in-between zone</span> where intercultural communication actually happens. It's not about switching between two fixed cultures, but creating a <span class="keyword">third space</span> of shared understanding.</p>
+                <div class="example-box">
+                    <div class="example-title">Practical Application:</div>
+                    <p>An Algerian freelancer and a German client don't just use "Algerian" or "German" communication. They co-create a <span class="highlight">project-specific hybrid culture</span> with its own norms for deadlines (compromise between flexibility and precision), meeting styles, and feedback methods.</p>
+                </div>
+                <p>This space is where <span class="keyword">misunderstandings become learning opportunities</span>, not failures.</p>
+            </div>
+        </div>
+
+        <h3>2. Theoretical Frameworks - Deep Dive</h3>
+        
+        <div class="theory-card">
+            <h4>Edward Hall's Context Theory (1976)</h4>
+            <p><strong>High-Context Cultures (HCC):</strong> Meaning is embedded in context, relationships, and non-verbal cues. Communication is <span class="keyword">indirect</span>, <span class="keyword">polite</span>, and maintains <span class="keyword">harmony</span>.</p>
+            <ul>
+                <li><strong>Examples:</strong> Japan, China, Arab countries, Algeria, Korea.</li>
+                <li><strong>Communication Style:</strong> "Perhaps we could consider another approach" (meaning: "This approach is wrong").</li>
+                <li><strong>Relies on:</strong> Shared history, long-term relationships, reading between the lines.</li>
+            </ul>
+            <p><strong>Low-Context Cultures (LCC):</strong> Meaning is in the explicit, coded message. Communication is <span class="keyword">direct</span>, <span class="keyword">clear</span>, and <span class="keyword">task-oriented</span>.</p>
+            <ul>
+                <li><strong>Examples:</strong> USA, Germany, Switzerland, Scandinavia.</li>
+                <li><strong>Communication Style:</strong> "This approach has three flaws: 1, 2, 3. We need to change it."</li>
+                <li><strong>Relies on:</strong> Detailed contracts, explicit instructions, literal interpretation.</li>
+            </ul>
+            <div class="example-box">
+                <div class="example-title">Classroom Implication (Didactics):</div>
+                <p>An Algerian student (HCC) might hesitate to directly contradict a teacher's idea, considering it disrespectful. A teacher from an LCC might interpret this hesitation as lack of understanding or engagement. The teacher needs to create safe, indirect ways for students to express disagreement (e.g., anonymous feedback, "devil's advocate" group role).</p>
+            </div>
+        </div>
+
+        <div class="theory-card">
+            <h4>Geert Hofstede's Cultural Dimensions - Extended Application</h4>
+            <p>Six dimensions that predict and explain workplace behavior, educational styles, and communication preferences.</p>
+            <ol>
+                <li><strong>Power Distance (PDI):</strong> How society handles inequality.
+                    <div class="example-box">
+                        <div class="example-title">Example:</div>
+                        <p><strong>High PDI (Malaysia, Arab World):</strong> Students rarely question teachers. Meetings are hierarchical. Titles are important.<br>
+                        <strong>Low PDI (Denmark, Israel):</strong> Students call teachers by first name. Flat organizational structures.</p>
+                    </div>
+                </li>
+                <li><strong>Individualism vs. Collectivism (IDV):</strong> "I" vs. "We" orientation.
+                    <div class="example-box">
+                        <div class="example-title">Example:</div>
+                        <p>In a <strong>collectivist</strong> team (e.g., Chinese), credit is given to the group. Criticizing one member shames the whole group. In an <strong>individualist</strong> team (e.g., American), individual achievement is spotlighted.</p>
+                    </div>
+                </li>
+                <li><strong>Uncertainty Avoidance (UAI):</strong> Tolerance for ambiguity.
+                    <div class="example-box">
+                        <div class="example-title">Example:</div>
+                        <p><strong>High UAI (Greece, Japan):</strong> Need detailed lesson plans, clear rubrics, strict deadlines.<br>
+                        <strong>Low UAI (Singapore, Jamaica):</strong> Comfortable with open-ended assignments, flexible schedules.</p>
+                    </div>
+                </li>
+                <li><strong>Masculinity vs. Femininity (MAS):</strong> Competition vs. care.
+                    <div class="example-box">
+                        <div class="example-title">Example:</div>
+                        <p>A <strong>masculine</strong> classroom (Japan) emphasizes grades and ranking. A <strong>feminine</strong> classroom (Sweden) emphasizes collaboration and well-being.</p>
+                    </div>
+                </li>
+                <li><strong>Long-Term vs. Short-Term Orientation (LTO):</strong> Future vs. present/past.
+                    <div class="example-box">
+                        <div class="example-title">Example:</div>
+                        <p><strong>Long-Term (China):</strong> Value perseverance, saving for education, adapting to market changes.<br>
+                        <strong>Short-Term (USA):</strong> Value quick results, quarterly profits, tradition.</p>
+                    </div>
+                </li>
+                <li><strong>Indulgence vs. Restraint (IVR):</strong> Gratification of desires.
+                    <div class="example-box">
+                        <div class="example-title">Example:</div>
+                        <p><strong>Indulgent (Mexico, Nigeria):</strong> Positive attitude, leisure time important, focus on happiness.<br>
+                        <strong>Restrained (Russia, Pakistan):</strong> Discipline, cynicism, strict social norms.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="theory-card">
+            <h4>Appadurai's Global Flows (Scapes) - Contemporary Relevance</h4>
+            <p>Globalization isn't one force but <span class="keyword">five intersecting flows</span> that constantly reshape culture (Appadurai, 1996).</p>
+            <ul>
+                <li><strong>Ethnoscapes:</strong> Movement of PEOPLE. <em>Example:</em> An Algerian student studying in France, a Syrian refugee in Germany, Filipino nurses in the UK. This creates <span class="highlight">super-diverse</span> classrooms where "French culture" is constantly redefined.</li>
+                <li><strong>Technoscapes:</strong> Flow of TECHNOLOGY. <em>Example:</em> Zoom enabling global teams, AI translation apps, social media algorithms spreading cultural trends instantly.</li>
+                <li><strong>Financescapes:</strong> Movement of MONEY. <em>Example:</em> Global investment in English language schools creates demand for IELTS/TOEFL, influencing what is taught.</li>
+                <li><strong>Mediascapes:</strong> Flow of IMAGES & INFORMATION. <em>Example:</em> Netflix shows shape perceptions of American life. TikTok trends create global youth culture. This creates <span class="keyword">cultural hybridization</span> - a teenager in Algiers listens to K-pop, wears American streetwear, and follows Islamic values.</li>
+                <li><strong>Ideoscapes:</strong> Flow of IDEAS & IDEOLOGIES. <em>Example:</em> The global spread of concepts like "human rights," "gender equality," or "nationalism" through education, NGOs, and media. This can create tension with local values.</li>
+            </ul>
+            <p><strong>Key Idea:</strong> Cultures are no longer geographically bounded but are constantly remixed through these global flows.</p>
+        </div>
+
+        <h3>3. Central Competencies & Processes</h3>
+        <div class="concept-grid">
+            <div class="concept-card">
+                <h4>Intercultural Communicative Competence (ICC) - Byram (1997)</h4>
+                <p>The <span class="keyword">ultimate goal</span> of modern language teaching, moving beyond linguistic accuracy.</p>
+                <ul>
+                    <li><strong>Savoirs:</strong> <span class="highlight">Knowledge</span> of social processes, own and other culture.</li>
+                    <li><strong>Savoir apprendre/faire:</strong> <span class="highlight">Skills</span> to interpret/relate documents/events.</li>
+                    <li><strong>Savoir être:</strong> <span class="highlight">Attitudes</span> of openness, curiosity, suspending judgment.</li>
+                    <li><strong>Savoir s'engager:</strong> <span class="highlight">Critical cultural awareness</span> - ability to evaluate perspectives critically.</li>
+                </ul>
+                <div class="example-box">
+                    <div class="example-title">Assessment Example:</div>
+                    <p>Instead of testing "Describe an American holiday," ask: "Compare how respect is shown to teachers in American and Algerian schools. What historical/power factors shaped these differences? How would you navigate a classroom with both sets of expectations?"</p>
+                </div>
+            </div>
+            <div class="concept-card">
+                <h4>The Intercultural Speaker vs. The Native Speaker</h4>
+                <p>The old ideal: sound like a <span class="keyword">native speaker</span>. The new ideal: become an <span class="keyword">intercultural speaker</span>.</p>
+                <p><strong>Intercultural Speaker:</strong>
+                <br>• A <span class="highlight">mediator</span> between cultures.
+                <br>• Has a <span class="highlight">plurilingual, flexible identity</span>.
+                <br>• Can <span class="highlight">explain</span> their own culture and <span class="highlight">interpret</span> another.
+                <br>• Comfortable in the <span class="highlight">"in-between"</span> space.</p>
+                <div class="example-box">
+                    <div class="example-title">From Lecture 3:</div>
+                    <p>An Algerian graduate who can: teach English using locally relevant examples, explain Algerian Ramadan traditions to foreign colleagues, and adapt communication style when working with a Chinese business partner. They are a <span class="highlight">cultural bridge</span>, not just a language conduit.</p>
+                </div>
+            </div>
+            <div class="concept-card">
+                <h4>Culture Shock & Adaptation - The U-Curve</h4>
+                <p>A <span class="keyword">normal psychological process</span>, not a personal weakness.</p>
+                <ol>
+                    <li><strong>Honeymoon:</strong> Fascination with the new. "Everything is wonderful!"</li>
+                    <li><strong>Crisis/Frustration:</strong> Overwhelmed by differences. "I hate it here. Nothing makes sense." (Fatima in our earlier scenario)</li>
+                    <li><strong>Adjustment:</strong> Developing coping strategies. "I'm starting to understand how things work."</li>
+                    <li><strong>Adaptation/Mastery:</strong> Feeling at home. "I can function effectively in both cultures." Develops <span class="keyword">bicultural or multicultural identity</span>.</li>
+                </ol>
+                <p><strong>Reverse Culture Shock:</strong> Often worse! Returning "home" and finding you've changed, or home has changed.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="scenarios">
+        <h2>Part 2: 10 Intercultural Scenarios with Concise Analysis</h2>
+        
+        <div class="exam-alert">
+            @everyone - Exam Strategy: For each scenario, identify 2-3 key concepts/theories from the lectures and apply them concisely.
+        </div>
+
+        <div class="scenario-container">
+            
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">1</span> The Silent Student</div>
+                <p><strong>Scenario:</strong> Mr. Jones (American teacher) finds his Chinese student, Li, never speaks in class discussions. He marks her down for "lack of participation." Li is confused, as she shows respect by listening carefully and submitting perfect written work.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">High vs. Low Context</span> + <span class="keyword">Power Distance</span>. In Li's high-context, high power distance culture, speaking out without being called on can be disrespectful. Participation is shown through attentive listening and quality work. Mr. Jones applies his low-context, low power distance norm (valuing verbal contribution) unfairly.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">2</span> The Missed Deadline</div>
+                <p><strong>Scenario:</strong> An Algerian project manager, Karim, sets a firm deadline with his Spanish contractor, Carlos. Carlos agrees but delivers two days late, apologizing profusely about "unforeseen family matters." Karim sees this as unprofessional and unreliable.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">Monochronic vs. Polychronic Time</span> (from Hall) + <span class="keyword">Individualism vs. Collectivism</span>. Karim likely has a monochronic view (time is linear, deadlines sacred). Carlos may have a polychronic orientation (time is fluid, relationships/family come before schedules). Spain's collectivism values family obligations over abstract deadlines.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">3</span> The "Rude" Email</div>
+                <p><strong>Scenario:</strong> German colleague Klaus sends an email to the Algerian team: "The report is incomplete. Fix sections 3 and 5 by EOD." The team is offended by the blunt tone. Klaus is confused; he was just being efficient.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p>Classic <span class="keyword">Low-Context vs. High-Context</span> clash. Klaus's direct style (LCC) is task-focused. The Algerian team (HCC) expects relational preamble ("Hope you're well, thanks for your work, could we perhaps look at sections 3 and 5?"). The missing context is perceived as disrespect.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">4</span> The Hybrid Identity</div>
+                <p><strong>Scenario:</strong> Amira, born in France to Algerian parents, is called "not really Algerian" by relatives in Algiers for her liberal views, and "not really French" by classmates in Paris for wearing a headscarf. She feels she belongs nowhere.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">Essentialist vs. Constructivist view of culture</span> + <span class="keyword">Ethnoscapes</span>. Amira's relatives hold an essentialist view (culture = fixed national traits). Amira embodies the <span class="highlight">hybrid, fluid identity</span> created by global ethnoscapes (migration). She is a <span class="keyword">third-culture individual</span>, negotiating her own "in-between" identity.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">5</span> The Virtual Misunderstanding</div>
+                <p><strong>Scenario:</strong> During a Zoom call, British team lead Sarah says, "That's an interesting idea," to Indian team member Ravi's suggestion, then moves on. Ravi thinks his idea was approved and starts working on it. Sarah meant it was questionable but didn't want to say "no" directly.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">High-Context communication in Low-Context medium</span> + <span class="keyword">Digital communication challenges</span>. Sarah used British high-context indirectness (understatement). Ravi interpreted it literally. The lack of non-verbal cues on Zoom (no subtle frown, tone) amplified the misunderstanding. This shows the perils of high-context speech in low-context digital channels.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">6</span> The Gift Refusal</div>
+                <p><strong>Scenario:</strong> Japanese businesswoman Ms. Tanaka offers an expensive gift to potential Algerian partner Mr. Aziz. He refuses politely three times, as per Algerian custom, expecting her to insist. She accepts the refusal, puts the gift away, and feels rejected. The deal falters.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">Ritualistic communication patterns</span>. Both cultures have gift-giving rituals, but the scripts differ. In Algeria, refusal is part of the polite ritual. In Japan, the gift is offered sincerely and accepted graciously. Neither knew the other's script, leading to a <span class="highlight">pragmatic failure</span> where intent ≠ interpretation.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">7</span> The Classroom Debate</div>
+                <p><strong>Scenario:</strong> A French teacher (Mme. Dupont) organizes a heated debate on secularism in her mixed class in Marseille (Algerian, Moroccan, French students). Algerian students are silent and visibly uncomfortable. She thinks they are not engaged or have nothing to say.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">Ideoscapes</span> + <span class="keyword">Classroom culture clash</span>. Mme. Dupont promotes a French ideoscape (laïcité as debatable public value). For some Muslim students, religion is not a debatable opinion but a sacred identity. Public debate on it feels disrespectful. This is a clash between <span class="highlight">academic critical discourse</span> and <span class="highlight">personal sacred values</span>.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">8</span> The "Yes" that means "No"</div>
+                <p><strong>Scenario:</strong> Filipino virtual assistant Maria always says "Yes, possible" or "Yes, I understand" to her American client's requests, even when she doesn't fully understand or the deadline is unrealistic. The client is frustrated when work is delayed or incorrect.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">High Power Distance</span> + <span class="keyword">Face-saving</span>. In high power distance cultures (Philippines), saying "no" or "I don't understand" to a superior (client) causes loss of face for both. Maria prioritizes maintaining harmony and respect over factual clarity. The American client (low power distance) expects clear, direct communication about constraints.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">9</span> The Social Media Backlash</div>
+                <p><strong>Scenario:</strong> A Swedish clothing brand posts an ad in Algeria featuring a woman in revealing sportswear hiking in the desert. It goes viral with negative comments accusing it of being disrespectful to local culture and values. The brand is surprised; their "empowerment" message failed.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">Mediascapes</span> + <span class="keyword">Cultural Translation Failure</span>. The brand's global mediascape campaign (promoting individual freedom/feminism) crashed into local <span class="keyword">ideoscapes</span> and norms about modesty. They applied a <span class="highlight">universalist</span> strategy without <span class="highlight">local intercultural adaptation</span>. Shows the need for <span class="keyword">glocalization</span>.</p>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-title"><span class="scenario-number">10</span> The Team Conflict</div>
+                <p><strong>Scenario:</strong> In a multicultural student project (German, Saudi, American, Korean), conflict erupts. The German and American want to divide tasks and work independently. The Saudi and Korean want long group meetings to build consensus first. Both sides think the other is wasting time or being inefficient.</p>
+                <div class="analysis-box">
+                    <div class="analysis-title">Key Analysis:</div>
+                    <p><span class="keyword">Individualism vs. Collectivism</span> + <span class="keyword">Task vs. Relationship Orientation</span>. German/American (individualist, task-oriented): "Let's get the work done." Saudi/Korean (collectivist, relationship-oriented): "We need to build trust and harmony first to work well together." The process itself is culturally defined. Success requires negotiating a <span class="keyword">hybrid team culture</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="nav-buttons">
+        <button class="nav-button" onclick="scrollToSection('concepts')">Back to Concepts</button>
+        <button class="nav-button" onclick="scrollToSection('scenarios')">Back to Scenarios</button>
+        <button class="nav-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to Top</button>
+    </div>
+
+    <footer>
+        <p>M1 Didactics - Intercultural Communication | Comprehensive Study Resource</p>
+        <p>This guide synthesizes and expands upon Lectures 1, 2, and 3. Use these concepts and scenario analyses to prepare for essay-style exam questions.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
