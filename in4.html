@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercultural Communication - Complete Guide</title>
+    <style>
+        /* ===== MOBILE-FIRST BASE ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        :root {
+            --primary-blue: #1a237e;
+            --secondary-blue: #3949ab;
+            --accent-red: #d32f2f;
+            --light-gray: #f5f5f5;
+            --medium-gray: #eeeeee;
+            --dark-gray: #424242;
+            --green: #388e3c;
+            --orange: #f57c00;
+            --purple: #7b1fa2;
+            --teal: #00796b;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 40px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+            padding-bottom: 40px;
+            overflow-x: hidden;
+        }
+        
+        /* ===== TYPOGRAPHY FOR MOBILE ===== */
+        h1 {
+            font-size: clamp(1.8rem, 6vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.3;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 700;
+            margin: var(--spacing-xl) 0 var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 4px solid var(--secondary-blue);
+            color: var(--primary-blue);
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-size: clamp(1.3rem, 4vw, 1.6rem);
+            font-weight: 600;
+            margin: var(--spacing-lg) 0 var(--spacing-md);
+            color: var(--dark-gray);
+            line-height: 1.4;
+        }
+        
+        h4 {
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+            font-weight: 600;
+            margin: var(--spacing-md) 0 var(--spacing-sm);
+            color: var(--secondary-blue);
+            line-height: 1.4;
+        }
+        
+        p {
+            font-size: clamp(1rem, 3vw, 1.05rem);
+            margin-bottom: var(--spacing-md);
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        /* ===== LAYOUT ===== */
+        .page {
+            max-width: 100%;
+            padding: var(--spacing-md);
+        }
+        
+        @media (min-width: 768px) {
+            .page {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: var(--spacing-lg);
+            }
+        }
+        
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+            border-radius: 0 0 var(--radius) var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: var(--spacing-lg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.95;
+            margin-top: var(--spacing-xs);
+            line-height: 1.5;
+        }
+        
+        /* ===== CONTENT CARDS ===== */
+        .section {
+            background: white;
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--secondary-blue);
+        }
+        
+        .sub-section {
+            background: var(--light-gray);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        /* ===== ACCORDION SYSTEM ===== */
+        .accordion {
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .accordion-item {
+            background: white;
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        
+        .accordion-header {
+            background: linear-gradient(135deg, var(--medium-gray), #e0e0e0);
+            padding: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            border-left: 6px solid var(--green);
+            transition: all 0.2s ease;
+        }
+        
+        .accordion-header:active {
+            background: #d6d6d6;
+        }
+        
+        .accordion-header h4 {
+            margin: 0;
+            color: var(--primary-blue);
+            flex: 1;
+            font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+        }
+        
+        .accordion-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.3em;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .accordion-content {
+            padding: 0 var(--spacing-md);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 5000px;
+            padding: var(--spacing-md);
+        }
+        
+        /* ===== KEY ELEMENTS ===== */
+        .keyword {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95em;
+            margin: 3px;
+            border: 2px solid #bbdefb;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #fff9c4 0%, #fff9c4 100%);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .important {
+            color: var(--accent-red);
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+        
+        .theory-tag {
+            display: inline-block;
+            background: var(--purple);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-left: var(--spacing-sm);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ===== LISTS ===== */
+        ul, ol {
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        li {
+            margin-bottom: var(--spacing-sm);
+            font-size: clamp(1rem, 3vw, 1.05rem);
+            line-height: 1.6;
+        }
+        
+        /* ===== DETAILED CONTENT SECTIONS ===== */
+        .content-block {
+            background: #f8f9fa;
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .detailed-explanation {
+            background: #f0f7ff;
+            border-left: 5px solid var(--secondary-blue);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+        
+        .detailed-explanation p {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* ===== EXAMPLES ===== */
+        .example {
+            background: #e8f5e9;
+            border-left: 5px solid var(--green);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+        
+        .example-title {
+            font-weight: 700;
+            color: #1b5e20;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.1em;
+        }
+        
+        .example-title::before {
+            content: "📌";
+            font-size: 1.2em;
+        }
+        
+        /* ===== SCENARIOS ===== */
+        .scenario-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        @media (min-width: 600px) {
+            .scenario-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .scenario {
+            background: white;
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--orange);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .scenario-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--orange);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: var(--spacing-sm);
+            font-size: 1.1em;
+        }
+        
+        .scenario-title {
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            font-size: 1.15em;
+        }
+        
+        .analysis {
+            background: #f3e5f5;
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--purple);
+            flex-grow: 1;
+        }
+        
+        .analysis-title {
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 1.1em;
+        }
+        
+        .analysis-title::before {
+            content: "🔍";
+            font-size: 1.2em;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-xl) 0;
+            justify-content: center;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-weight: 600;
+            min-width: 140px;
+            text-align: center;
+        }
+        
+        .nav-btn:active {
+            transform: scale(0.98);
+            background: var(--primary-blue);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-xl);
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 2px solid #ddd;
+            margin-top: var(--spacing-xl);
+            line-height: 1.6;
+        }
+        
+        /* ===== UTILITY ===== */
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--secondary-blue), transparent);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .reference {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: var(--spacing-sm);
+            padding-left: var(--spacing-sm);
+            border-left: 3px solid #ccc;
+        }
+        
+        .lecture-tag {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: var(--spacing-sm);
+            font-weight: 600;
+        }
+        
+        /* ===== TOUCH OPTIMIZATIONS ===== */
+        @media (hover: none) {
+            .accordion-header {
+                min-height: 60px;
+            }
+            
+            .nav-btn {
+                min-height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        /* ===== EXPANDED CONTENT STYLES ===== */
+        .elaborate-content {
+            background: white;
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border: 2px solid #e3f2fd;
+        }
+        
+        .consequence-box {
+            background: #fff3e0;
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--orange);
+        }
+        
+        .pedagogical-implication {
+            background: #e8f5e9;
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--green);
+        }
+        
+        .implication-title {
+            font-weight: 700;
+            color: #1b5e20;
+            margin-bottom: var(--spacing-sm);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Intercultural Communication</h1>
+        <p class="subtitle">Complete M1 Study Guide - All Concepts Covered with Detailed Explanations</p>
+        <p class="subtitle">Tap sections to expand • Comprehensive paragraphs with examples</p>
+    </div>
+
+    <div class="page">
+        <!-- QUICK NAVIGATION -->
+        <div class="quick-nav">
+            <button class="nav-btn" onclick="scrollToSection('definitions')">1. Definitions</button>
+            <button class="nav-btn" onclick="scrollToSection('components')">2. Components</button>
+            <button class="nav-btn" onclick="scrollToSection('theories')">3. Theories</button>
+            <button class="nav-btn" onclick="scrollToSection('didactics')">4. Didactics</button>
+            <button class="nav-btn" onclick="scrollToSection('global')">5. Global View</button>
+            <button class="nav-btn" onclick="scrollToSection('intercultural-speaker')">6. Intercultural Speaker</button>
+            <button class="nav-btn" onclick="scrollToSection('scenarios')">7. Scenarios</button>
+        </div>
+
+        <!-- SECTION 1: DEFINITIONS -->
+        <section id="definitions" class="section">
+            <h2>📚 1. Core Definitions and Foundational Concepts</h2>
+            <p><span class="lecture-tag">LECTURE 1</span> This section establishes the fundamental understanding of intercultural communication as both an academic field and a practical skill essential for navigating today's interconnected world.</p>
+            
+            <div class="accordion">
+                <!-- Definition 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Intercultural Communication: The Essential Definition</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p><span class="keyword">Intercultural communication</span> represents the complex process through which individuals or groups from distinct cultural backgrounds exchange information, negotiate meaning, and attempt to build mutual understanding. According to Samovar, Porter, and McDaniel (2015), this is not merely about language exchange but encompasses the entire spectrum of human interaction where cultural differences come into play.</p>
+                            
+                            <p>The significance of this field has grown exponentially in our globalized era, where classrooms, workplaces, and social spaces increasingly bring together people from diverse cultural backgrounds. For teachers specifically, understanding intercultural communication means recognizing that students bring different communication styles, learning expectations, and interaction patterns rooted in their cultural upbringings. This awareness enables educators to create more inclusive learning environments where all students can thrive.</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>What makes intercultural communication particularly challenging is that it operates on multiple levels simultaneously. At the <span class="highlight">verbal level</span>, differences in vocabulary, grammar, and pronunciation can create barriers. At the <span class="highlight">non-verbal level</span>, variations in gestures, eye contact, personal space, and silence can lead to serious misunderstandings. Most crucially, at the <span class="highlight">cognitive level</span>, divergent cultural frameworks for interpreting reality can cause the same message to be understood in completely different ways.</p>
+                                
+                                <p>For instance, when an Algerian teacher uses indirect criticism ("Perhaps we could consider another approach") with a German student who expects direct feedback ("This method has three problems"), both parties may leave the interaction frustrated. The teacher feels the student is disrespectful for not appreciating the polite suggestion, while the student feels confused about what exactly needs to be improved. This example illustrates why intercultural communication must be studied not as an abstract concept but as a practical skill that can be developed through awareness, knowledge, and practice.</p>
+                            </div>
+                            
+                            <div class="consequence-box">
+                                <h4>Practical Consequences for Education:</h4>
+                                <p>When teachers lack intercultural communication competence, they may unintentionally favor students whose communication styles match their own, disadvantage students from different cultural backgrounds, and create classroom environments where some students feel excluded or misunderstood. Conversely, teachers with strong intercultural skills can bridge these differences, helping all students to communicate effectively while maintaining their cultural identities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Definition 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Culture: From Static Concept to Dynamic Process</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>Traditionally, culture was defined by Hall (1976) as <span class="keyword">"a shared system of meanings, values, and practices that shape how individuals perceive the world."</span> This definition emphasized culture as something relatively stable, coherent, and tied to specific national or ethnic groups. In this view, one could speak of "Algerian culture," "French culture," or "Japanese culture" as distinct, bounded systems with clear characteristics.</p>
+                            
+                            <p>However, contemporary applied linguistics, as discussed in Lecture 3, challenges this static view. Scholars like Holliday (2011) and Baker (2015) argue that in our globalized world, culture must be understood as <span class="important">fluid, hybrid, and constantly evolving</span>. Rather than being fixed containers that people belong to, cultures are dynamic processes that individuals actively participate in constructing through their daily practices and interactions.</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>This shift in understanding has profound implications. Instead of asking "What is Algerian culture?" (which suggests a definitive answer), we should ask "How do people in different contexts perform and negotiate cultural meanings?" For example, an Algerian university student might:</p>
+                                
+                                <ul>
+                                    <li>Speak formal Modern Standard Arabic during a class presentation</li>
+                                    <li>Switch to Darija (Algerian Arabic) when chatting with friends between classes</li>
+                                    <li>Use French-accented academic language when discussing philosophy with a professor</li>
+                                    <li>Employ simplified English with emojis when texting with an international friend online</li>
+                                </ul>
+                                
+                                <p>Each of these language choices represents not just different linguistic codes but different cultural performances. The student is not switching between "cultures" as if they were separate rooms but rather drawing from a rich repertoire of cultural resources that are constantly mixed and recombined. This perspective helps explain why two people from the "same culture" can have vastly different behaviors, values, and communication styles based on their generation, education, region, social class, and personal experiences.</p>
+                            </div>
+                            
+                            <div class="example">
+                                <div class="example-title">Educational Application:</div>
+                                <p>When teaching about "British culture," instead of presenting a fixed list of characteristics (tea drinking, queueing, etc.), a culturally responsive teacher would explore how cultural practices vary across different regions of the UK, across social classes, across generations, and even within families. Students would examine how globalization has transformed British culture through immigration, media influences, and economic changes. This approach prevents stereotyping and helps students understand culture as a living, breathing phenomenon that they themselves participate in shaping.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Definition 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Interculturality: Beyond Simple Contact</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p><span class="keyword">Interculturality</span> represents a more sophisticated understanding than mere "cross-cultural contact." As developed by Byram (1997) and Kramsch (1998), interculturality involves <span class="highlight">critical engagement</span> with cultural differences, including questioning assumptions, analyzing power relations, and understanding how identities are negotiated in interaction.</p>
+                            
+                            <p>This concept moves beyond the simple recognition that "cultures are different" to ask more probing questions: Whose cultural norms dominate in a given interaction? Who has the power to define what is "normal" or "appropriate" communication? How are stereotypes reinforced or challenged? How do individuals negotiate their multiple cultural affiliations in different contexts?</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>Consider a business meeting between Algerian and French partners. Interculturality would examine not just the surface-level communication differences (direct vs indirect style) but also the underlying power dynamics. Does the meeting take place in French, giving native speakers an advantage? Are the meeting procedures based on French corporate norms, requiring Algerian participants to adapt? Who sets the agenda, controls the speaking turns, and defines what counts as a "productive" discussion?</p>
+                                
+                                <p>In educational settings, interculturality prompts teachers to reflect on their own classroom practices: Are we valuing certain communication styles over others? Are we privileging students whose cultural backgrounds align with our teaching methods? Are we creating space for students to bring their diverse cultural perspectives into the learning process, or are we expecting them to assimilate to a single cultural norm?</p>
+                            </div>
+                            
+                            <div class="pedagogical-implication">
+                                <div class="implication-title">Teaching Implication:</div>
+                                <p>Developing interculturality in students means moving beyond cultural facts (teaching about holidays, foods, and traditions) to developing critical thinking about culture. Students should learn to deconstruct stereotypes, analyze media representations of different cultures, recognize power imbalances in intercultural encounters, and reflect on their own cultural positioning. This transforms culture learning from passive reception of information to active engagement with complexity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: KEY COMPONENTS -->
+        <section id="components" class="section">
+            <h2>🧩 2. Key Components of Intercultural Communication</h2>
+            <p><span class="lecture-tag">LECTURE 1</span> Understanding intercultural communication requires examining its fundamental building blocks—the elements that make cross-cultural interactions uniquely challenging and rewarding.</p>
+            
+            <div class="accordion">
+                <!-- Component 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Culture as a Meaning System</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>At its core, culture functions as a <span class="keyword">meaning-making system</span> that shapes every aspect of human perception, cognition, and behavior. This system operates largely at an unconscious level, influencing what we notice, how we interpret events, what we value, and how we communicate. Hofstede famously described culture as "the software of the mind"—the mental programming that runs beneath our conscious awareness.</p>
+                            
+                            <p>This programming affects communication in profound ways. For example, cultures vary in their basic assumptions about:</p>
+                            
+                            <ul>
+                                <li><span class="highlight">Human nature:</span> Are people basically good, evil, or mixed? Can they change?</li>
+                                <li><span class="highlight">Time:</span> Is time linear (events happen in sequence) or cyclical (patterns repeat)? Is the past, present, or future most important?</li>
+                                <li><span class="highlight">Human relationships:</span> Are people fundamentally equal or hierarchically organized? Is individualism or collectivism valued?</li>
+                                <li><span class="highlight">Activity:</span> Should humans "be" (focus on personal development), "do" (focus on achievement), or "become" (focus on spiritual growth)?</li>
+                            </ul>
+                            
+                            <div class="detailed-explanation">
+                                <p>These deep cultural assumptions manifest in communication styles. A culture that values "being" might prioritize relationship-building and present-moment enjoyment in conversations, while a "doing" culture might focus immediately on tasks and future outcomes. A culture with hierarchical assumptions will have elaborate linguistic markers of status (honorifics, formal vs informal address), while an egalitarian culture might minimize such distinctions.</p>
+                                
+                                <p>The challenge in intercultural communication is that we typically interpret others' behaviors through our own cultural meaning system. When an American (from a "doing," individualistic, egalitarian culture) works with a Japanese colleague (from a "being," collectivistic, hierarchical culture), each may misinterpret the other's communication style as personal rather than cultural. The American might see the Japanese colleague's indirectness as evasive, while the Japanese colleague might see the American's directness as rude.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Component 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>The Communication Process Across Cultures</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>Communication is fundamentally a <span class="keyword">symbolic process</span> through which people create and share meaning. In intercultural contexts, this process becomes exponentially more complex because the symbols (words, gestures, expressions) may carry different meanings, and the process rules (turn-taking, appropriate topics, emotional expression) may vary significantly.</p>
+                            
+                            <p>The verbal dimension includes not just vocabulary and grammar but also pragmatic aspects: how requests are made, how refusals are expressed politely, how compliments are given and received, how disagreements are managed. For instance, in some cultures, a direct refusal ("No, I cannot do that") is acceptable, while in others, indirect refusal ("That might be difficult," "I will try," or silence) is the polite norm.</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>Non-verbal communication presents even greater challenges because it is often less conscious and more culturally specific. Consider these variations:</p>
+                                
+                                <ul>
+                                    <li><span class="highlight">Eye contact:</span> In many Western cultures, direct eye contact signals honesty and engagement. In some Asian and African cultures, it can signal challenge or disrespect, especially toward authority figures.</li>
+                                    <li><span class="highlight">Personal space:</span> Mediterranean and Latin American cultures typically use closer speaking distances than Northern European and East Asian cultures.</li>
+                                    <li><span class="highlight">Touch:</span> Cultures vary dramatically in who can touch whom, where, when, and for how long.</li>
+                                    <li><span class="highlight">Facial expressions:</span> While basic emotions may be universally recognizable, their intensity, duration, and appropriateness for public display vary culturally.</li>
+                                    <li><span class="highlight">Silence:</span> In some cultures, silence indicates respect, thoughtfulness, or agreement. In others, it signals disagreement, confusion, or discomfort.</li>
+                                </ul>
+                                
+                                <p>These differences matter profoundly in educational settings. A teacher who expects students to maintain eye contact as a sign of attention may misinterpret averted eyes as disinterest or disrespect from students whose culture teaches them to lower their gaze when listening to authority figures. Similarly, a student from a culture where questioning teachers is disrespectful may remain silent not because they don't understand but because they're showing proper respect.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Component 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Context: The Situational Framework</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>All communication occurs within multiple layers of <span class="keyword">context</span>, and intercultural misunderstandings often arise when people fail to recognize how context shapes meaning differently across cultures. Edward Hall's distinction between high-context and low-context cultures represents one of the most important frameworks for understanding these differences.</p>
+                            
+                            <p>In <span class="highlight">high-context cultures</span> (like Algeria, Japan, and Arab countries), meaning is deeply embedded in the context—the physical setting, the relationship between communicators, shared history, non-verbal cues, and unspoken assumptions. Much information is conveyed indirectly, and communicators are expected to "read between the lines." High-context communication relies on deep shared understanding and tends to be more relationship-focused than information-focused.</p>
+                            
+                            <p>In <span class="highlight">low-context cultures</span> (like the United States, Germany, and Switzerland), meaning is primarily encoded in the explicit verbal message. Context provides relatively little information, so communicators must be clear, direct, and complete in their verbal expression. Low-context communication values efficiency, clarity, and task-orientation over relationship maintenance.</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>These differences create predictable misunderstandings. A German manager (low-context) sending an email to an Algerian team (high-context) might write: "The report is incomplete. Please fix sections 3 and 5 by Friday." The German intends efficiency; the explicit message contains all necessary information. However, the Algerian recipients may feel offended by the bluntness, expecting relational framing first ("I hope you're well. Thank you for your hard work on the report. I have a few suggestions for improvement...").</p>
+                                
+                                <p>Conversely, when an Algerian employee gives indirect negative feedback ("Perhaps we could consider another approach"), a German manager might miss the criticism entirely, taking the statement at face value as a neutral suggestion rather than a polite way of saying "This approach is wrong."</p>
+                                
+                                <p>Understanding context also means recognizing that communication rules change based on the situation. The same person may use direct communication in a business meeting but indirect communication at a family gathering. Cultural norms interact with situational factors: Is this a formal or informal setting? What is the power relationship between communicators? What is the purpose of the interaction? Effective intercultural communicators develop sensitivity to these contextual variations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Component 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Intercultural Competence: The Goal of Development</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p><span class="keyword">Intercultural competence</span>, as defined by Deardorff (2006), represents the ultimate goal of intercultural learning—the ability to communicate effectively and appropriately across cultural differences. This is not an innate talent but a set of knowledge, skills, and attitudes that can be developed through education and experience.</p>
+                            
+                            <p>Deardorff's model identifies several interrelated components:</p>
+                            
+                            <div class="sub-section">
+                                <h4>1. Knowledge Component</h4>
+                                <p>This includes both culture-specific knowledge (understanding particular cultural practices, values, and communication styles) and culture-general knowledge (understanding how culture works as a phenomenon, including concepts like ethnocentrism, stereotyping, and cultural adaptation). Effective intercultural communicators need knowledge about their own culture as well as others', since self-awareness is essential for recognizing how one's own cultural background shapes perception and behavior.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>2. Skills Component</h4>
+                                <p>These are the practical abilities needed to navigate intercultural situations: listening for understanding (not just for response), observing carefully, interpreting behavior in cultural context, adapting communication style, managing anxiety and uncertainty, and resolving conflicts that arise from cultural differences. Particularly important is the skill of perspective-taking—the ability to see situations from another cultural viewpoint.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>3. Attitudes Component</h4>
+                                <p>Underlying effective intercultural interaction are certain dispositions: respect for cultural differences, curiosity about other ways of being, openness to new experiences, tolerance for ambiguity, and willingness to suspend judgment. These attitudes create the psychological space for learning and adaptation to occur.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>4. Internal Outcomes</h4>
+                                <p>These are the cognitive and affective changes that occur within the individual: increased cultural self-awareness, flexibility in thinking, adaptability, empathy, and the ability to critically evaluate cultural perspectives.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>5. External Outcomes</h4>
+                                <p>These are the observable behaviors that demonstrate competence: communicating effectively and appropriately in intercultural situations, building positive relationships across cultures, and achieving mutual understanding despite differences.</p>
+                            </div>
+                            
+                            <div class="pedagogical-implication">
+                                <div class="implication-title">Educational Application:</div>
+                                <p>Developing intercultural competence in students requires moving beyond teaching cultural facts to developing all these components. Activities should include self-reflection on one's own cultural conditioning, practice in perspective-taking, analysis of intercultural misunderstandings, and opportunities for authentic interaction across cultural differences (whether face-to-face or virtual). Assessment should evaluate not just knowledge but also skills and attitudes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THEORETICAL PERSPECTIVES -->
+        <section id="theories" class="section">
+            <h2>🎓 3. Theoretical Perspectives and Frameworks</h2>
+            <p><span class="lecture-tag">LECTURES 1 & 2</span> Multiple theoretical frameworks help us analyze and understand intercultural communication. Each offers valuable insights into why misunderstandings occur and how they can be addressed.</p>
+            
+            <div class="accordion">
+                <!-- Theory 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Hall's High-Context vs Low-Context Theory <span class="theory-tag">1976</span></h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>Edward Hall's groundbreaking work introduced the continuum between <span class="keyword">high-context</span> and <span class="keyword">low-context</span> communication styles, providing one of the most useful frameworks for understanding intercultural misunderstandings. This theory explains how cultures vary in their reliance on contextual cues versus explicit verbal messages.</p>
+                            
+                            <p>In <span class="highlight">high-context cultures</span>, communication is like an iceberg: most of the meaning lies beneath the surface. These cultures typically have long histories, stable relationships, and homogeneous populations that create shared understanding. Communication emphasizes harmony, face-saving, and indirectness. Important information is conveyed through non-verbal cues, situational factors, and what is left unsaid. Countries like Japan, China, Korea, and Arab nations exemplify high-context communication styles.</p>
+                            
+                            <p>In <span class="highlight">low-context cultures</span>, communication is like a clear stream: everything should be visible and explicit. These cultures often have shorter histories, more social mobility, and heterogeneous populations with less shared background. Communication values clarity, precision, and directness. The responsibility for clear communication lies with the speaker, who should encode all necessary information in the verbal message. Countries like the United States, Germany, Switzerland, and Scandinavian nations exemplify low-context styles.</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>These differences manifest in numerous communication behaviors:</p>
+                                
+                                <ul>
+                                    <li><span class="highlight">Business negotiations:</span> High-context negotiators spend considerable time building relationships before discussing business, while low-context negotiators want to get straight to the agenda.</li>
+                                    <li><span class="highlight">Written communication:</span> High-context writers use more qualifiers, indirect language, and relational markers, while low-context writers are more direct and task-focused.</li>
+                                    <li><span class="highlight">Conflict management:</span> High-context cultures prefer indirect conflict resolution (mediation, avoidance, third-party intervention), while low-context cultures prefer direct confrontation and "clearing the air."</li>
+                                    <li><span class="highlight">Learning styles:</span> High-context learners may prefer observation and imitation, while low-context learners may prefer explicit instruction and questioning.</li>
+                                </ul>
+                                
+                                <p>Importantly, Hall noted that most cultures are not purely high- or low-context but fall somewhere on the continuum. Additionally, within any culture, communication style may vary by context (e.g., more high-context in family settings, more low-context in technical or legal contexts).</p>
+                                
+                                <div class="example">
+                                    <div class="example-title">Classroom Application:</div>
+                                    <p>An Algerian teacher (high-context) might give indirect feedback: "Some students could work on their organization." Students from low-context cultures might not realize this is directed at them specifically. Conversely, an American teacher (low-context) might say: "Ahmed, your paper is poorly organized." Ahmed, from a high-context culture, might feel publicly shamed by this direct criticism. Understanding these differences helps teachers adapt their communication to be effective with diverse students.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Theory 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Hofstede's Cultural Dimensions Theory <span class="theory-tag">2001</span></h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>Geert Hofstede's research, based on extensive surveys of IBM employees across 50 countries, identified six value dimensions along which cultures vary. These dimensions provide a powerful framework for predicting and explaining communication differences, work styles, educational approaches, and management practices.</p>
+                            
+                            <div class="sub-section">
+                                <h4>1. Power Distance (PDI): Acceptance of Hierarchy</h4>
+                                <p>This dimension measures the extent to which less powerful members of a society accept and expect that power is distributed unequally. <span class="highlight">High power distance cultures</span> (like Malaysia, Arab countries, the Philippines) accept hierarchical order where everyone has their place. In these cultures, teachers are respected authorities, students rarely question them, and organizational hierarchies are clear and respected. <span class="highlight">Low power distance cultures</span> (like Austria, Denmark, Israel) strive for equal power distribution. Here, teachers are facilitators, students question and challenge, and organizations have flatter structures.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>2. Individualism vs Collectivism (IDV): "I" vs "We" Orientation</h4>
+                                <p>This dimension measures the degree to which people are integrated into groups. <span class="highlight">Individualistic cultures</span> (like the United States, Australia, Great Britain) value personal achievement, independence, and self-expression. Communication tends to be direct, and individuals are expected to speak for themselves. <span class="highlight">Collectivistic cultures</span> (like Guatemala, Indonesia, Pakistan) value group harmony, loyalty, and interdependence. Communication tends to be indirect to preserve face and relationships, and individuals speak as group representatives.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>3. Masculinity vs Femininity (MAS): Competition vs Cooperation</h4>
+                                <p>This dimension measures the distribution of values between the genders, which overlaps with achievement vs nurturing orientations. <span class="highlight">Masculine cultures</span> (like Japan, Hungary, Austria) value competition, achievement, and material success. Educational systems emphasize grades and rankings. <span class="highlight">Feminine cultures</span> (like Sweden, Norway, the Netherlands) value cooperation, modesty, and quality of life. Educational systems emphasize well-being and collaborative learning.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>4. Uncertainty Avoidance (UAI): Tolerance for Ambiguity</h4>
+                                <p>This dimension measures a society's tolerance for uncertainty and ambiguity. <span class="highlight">High uncertainty avoidance cultures</span> (like Greece, Portugal, Uruguay) maintain rigid codes of belief and behavior and are intolerant of unorthodox behavior. They prefer clear rules, structured learning environments, and detailed instructions. <span class="highlight">Low uncertainty avoidance cultures</span> (like Singapore, Jamaica, Denmark) maintain a more relaxed attitude where practice counts more than principles. They tolerate ambiguity, prefer flexible learning environments, and value creativity over rules.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>5. Long-term vs Short-term Orientation (LTO): Time Perspective</h4>
+                                <p>This dimension, based on Confucian dynamism, measures a society's time horizon. <span class="highlight">Long-term oriented cultures</span> (like China, Japan, South Korea) value persistence, thrift, and adaptation to changing circumstances. Education emphasizes future rewards and lifelong learning. <span class="highlight">Short-term oriented cultures</span> (like the United States, Great Britain, Canada) value tradition, immediate results, and stability. Education may emphasize quick mastery and practical application.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>6. Indulgence vs Restraint (IVR): Gratification Control</h4>
+                                <p>This dimension measures the extent to which a society allows relatively free gratification of basic human desires. <span class="highlight">Indulgent cultures</span> (like Mexico, Nigeria, Sweden) allow relatively free gratification of natural human drives related to enjoying life. They value leisure time and personal freedom. <span class="highlight">Restrained cultures</span> (like Egypt, Russia, Pakistan) suppress gratification of needs and regulate it by means of strict social norms. They value discipline and control.</p>
+                            </div>
+                            
+                            <div class="pedagogical-implication">
+                                <div class="implication-title">Educational Implications:</div>
+                                <p>Understanding these dimensions helps teachers anticipate students' needs. A teacher from a low power distance, individualistic culture might need to adjust when teaching students from high power distance, collectivistic cultures. The former might expect students to speak up independently, while the latter might expect to speak only when called upon and to represent group consensus rather than individual opinion. Group work might be natural for collectivistic students but require more scaffolding for individualistic ones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Theory 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Appadurai's Global Cultural Flows (Scapes) <span class="theory-tag">1996</span></h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>Arjun Appadurai's framework explains globalization not as a single homogenizing force but as multiple, overlapping flows that create complex cultural dynamics. His concept of five "scapes" helps us understand how culture circulates and transforms in the contemporary world.</p>
+                            
+                            <div class="sub-section">
+                                <h4>1. Ethnoscapes: The Landscape of Persons</h4>
+                                <p>This refers to the flow of people across borders: tourists, immigrants, refugees, exiles, guest workers, students, and other moving groups. These movements create increasingly diverse societies where multiple cultural traditions coexist and interact. For example, Algerian communities in France maintain connections with Algeria while adapting to French society, creating new hybrid identities. In educational contexts, ethnoscapes mean classrooms with students from multiple national, ethnic, and linguistic backgrounds, each bringing different cultural resources.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>2. Mediascapes: The Distribution of Electronic Capabilities</h4>
+                                <p>This refers to both the distribution of electronic media capabilities and the images of the world created by these media. Hollywood films, BBC news, Al Jazeera, social media platforms, and streaming services create and circulate representations that shape how people imagine other places and peoples. A student in Algeria might form impressions of American life from Netflix series, while an American student might form impressions of Arab cultures from news coverage. These media representations often simplify and stereotype, creating challenges for intercultural understanding.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>3. Technoscapes: The Global Configuration of Technology</h4>
+                                <p>This refers to the rapid movement of technology across borders. Digital communication tools (Zoom, WhatsApp, social media), AI translation, and global information networks enable instantaneous intercultural communication but also create new challenges. Technoscapes transform how we interact across cultures—making virtual teams possible but also removing important non-verbal cues. They also create digital divides between those with access to technology and those without.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>4. Financescapes: The Flow of Global Capital</h4>
+                                <p>This refers to the rapid movement of money across national borders via currency markets, stock exchanges, and commodity speculations. Financial globalization affects education through funding patterns, international student markets, and corporate influence on curriculum. The dominance of English in global business affects language education priorities worldwide.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>5. Ideoscapes: The Flow of Political Ideas</h4>
+                                <p>This refers to the movement of ideologies and counter-ideologies: democracy, human rights, socialism, feminism, religious fundamentalism, environmentalism, etc. These ideas travel through education systems, media, NGOs, and social movements. In intercultural education, ideoscapes create both opportunities for dialogue about shared values and challenges when ideologies conflict with local traditions.</p>
+                            </div>
+                            
+                            <div class="detailed-explanation">
+                                <p>Appadurai's framework helps us understand that globalization doesn't simply mean Westernization or homogenization. Instead, it creates complex processes of cultural mixing, adaptation, and resistance. Local cultures don't just passively receive global influences; they actively select, reinterpret, and hybridize them. An Algerian teenager might combine Islamic values, Algerian traditions, American hip-hop fashion, K-pop music, and global environmental activism into a unique personal identity.</p>
+                                
+                                <p>For educators, this means recognizing that students navigate multiple cultural influences simultaneously. Teaching intercultural communication isn't about preparing students for contact with "pure" foreign cultures but for engaging with the complex, hybrid, constantly evolving cultural realities of our globalized world.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERCULTURAL COMMUNICATION IN DIDACTICS -->
+        <section id="didactics" class="section">
+            <h2>🏫 4. Intercultural Communication in Didactics</h2>
+            <p><span class="lecture-tag">LECTURE 1</span> The application of intercultural communication principles to teaching represents one of the most significant developments in modern language education and general pedagogy.</p>
+            
+            <div class="accordion">
+                <!-- Didactics 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>The Shift from Linguistic to Intercultural Competence</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>Traditional language teaching focused primarily on developing <span class="keyword">linguistic competence</span>: vocabulary, grammar, pronunciation, and the four skills (listening, speaking, reading, writing). While these remain important, contemporary approaches recognize that language cannot be separated from culture, and that communication involves more than linguistic accuracy.</p>
+                            
+                            <p>This shift was powerfully articulated by Michael Byram in his 1997 work on <span class="keyword">Intercultural Communicative Competence (ICC)</span>. Byram argued that language learners need not only linguistic skills but also the ability to use language appropriately in cultural context, to mediate between cultures, and to develop critical awareness of their own and others' cultural perspectives.</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>Byram's model identifies five "savoirs" or areas of knowledge and ability:</p>
+                                
+                                <ol>
+                                    <li><span class="highlight">Savoir être (attitudes):</span> Curiosity and openness, readiness to suspend disbelief about other cultures and belief about one's own.</li>
+                                    <li><span class="highlight">Savoir apprendre (skills of discovery and interaction):</span> Ability to acquire new knowledge of a culture and cultural practices, and to operate knowledge, attitudes, and skills under the constraints of real-time communication.</li>
+                                    <li><span class="highlight">Savoirs (knowledge):</span> Knowledge of social groups and their products and practices in one's own and in one's interlocutor's country, and of the general processes of societal and individual interaction.</li>
+                                    <li><span class="highlight">Savoir faire (skills):</span> Ability to relate and interpret documents or events from another culture to one's own.</li>
+                                    <li><span class="highlight">Savoir s'engager (critical cultural awareness):</span> Ability to evaluate critically and on the basis of explicit criteria perspectives, practices, and products in one's own and other cultures and countries.</li>
+                                </ol>
+                                
+                                <p>This model has transformed language teaching from a primarily instrumental activity (learning to communicate with native speakers) to an educational one (developing intercultural understanding and critical thinking).</p>
+                            </div>
+                            
+                            <div class="example">
+                                <div class="example-title">Classroom Application:</div>
+                                <p>Instead of just teaching British holidays, a teacher using an ICC approach would have students compare how different cultures mark important life events, analyze what values these celebrations express, reflect on their own cultural practices, and consider how they would explain their traditions to someone from another culture. The goal isn't just knowledge about British culture but developing skills for intercultural mediation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Didactics 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Creating Culturally Responsive Learning Environments</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>Intercultural communication principles help teachers create classrooms that are inclusive of diverse cultural backgrounds. This involves several key strategies:</p>
+                            
+                            <div class="sub-section">
+                                <h4>1. Recognizing Multiple Communication Styles</h4>
+                                <p>Teachers need to understand that students from different cultures may have different patterns of classroom participation. Some may speak frequently and assertively; others may listen carefully and speak only when sure of their answer. Some may ask questions publicly; others may prefer to ask privately. Some may work best independently; others may prefer group collaboration. Effective teachers create space for multiple participation styles rather than privileging one approach.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>2. Adapting Teaching Methods</h4>
+                                <p>Teaching methods that work well in one cultural context may need adaptation for others. For example, the Socratic method of questioning and challenging students' ideas may be effective in low power distance cultures where students are comfortable with public intellectual debate but may cause discomfort in high power distance cultures where students expect to receive knowledge from authorities rather than co-construct it through questioning.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>3. Using Culturally Relevant Examples</h4>
+                                <p>When teaching concepts, using examples from students' diverse cultural backgrounds helps make learning meaningful and validates their cultural identities. This also exposes all students to multiple cultural perspectives.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>4. Addressing Power Imbalances</h4>
+                                <p>Interculturally competent teachers are aware of how power operates in their classrooms. They consider whose knowledge is valued, whose voices are heard, whose experiences are centered. They work to create more equitable participation and to challenge stereotypes and prejudices that students may bring to the classroom.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>5. Developing Critical Cultural Awareness</h4>
+                                <p>Beyond celebrating cultural differences, effective intercultural education helps students develop the ability to think critically about culture—to analyze how cultural practices are shaped by historical, political, and economic factors; to recognize stereotypes and biases; to understand how power influences cultural representations; and to reflect on their own cultural positioning.</p>
+                            </div>
+                            
+                            <div class="pedagogical-implication">
+                                <div class="implication-title">Practical Implementation:</div>
+                                <p>Teachers can implement these principles through activities like cultural comparison projects, analysis of intercultural misunderstandings in films or literature, role-plays of cross-cultural situations, critical examination of media representations of different cultures, and reflection journals on students' own intercultural experiences. Assessment should evaluate not just factual knowledge but also intercultural skills and attitudes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: GLOBAL PERSPECTIVE -->
+        <section id="global" class="section">
+            <h2>🌍 5. Global Perspective on Intercultural Communication</h2>
+            <p><span class="lecture-tag">LECTURE 2</span> In our interconnected world, intercultural communication occurs within the context of globalization, digital technology, and English as a global lingua franca.</p>
+            
+            <div class="accordion">
+                <!-- Global 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>Globalization's Dual Impact on Communication</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p><span class="keyword">Globalization</span>—the increasing interconnectedness of people and societies worldwide—has transformed intercultural communication in fundamental ways. According to Gudykunst (2004), globalization has made intercultural encounters more frequent, diverse, and complex than ever before.</p>
+                            
+                            <p>On one hand, globalization creates opportunities for enhanced intercultural understanding through increased contact, exchange of ideas, and exposure to different perspectives. Digital technologies enable people to communicate across geographical boundaries instantaneously, creating virtual communities that transcend national borders. Students can collaborate on projects with peers in other countries, professionals can work in global teams, and individuals can maintain relationships across continents.</p>
+                            
+                            <p>On the other hand, globalization also creates challenges and tensions. The rapid pace of cultural change can lead to identity confusion and resistance. The dominance of Western media and cultural products can threaten local cultures and languages. Economic inequalities between nations create power imbalances in intercultural interactions. And the increased frequency of contact doesn't automatically lead to better understanding—it can also reinforce stereotypes and prejudices when encounters are superficial or conflictual.</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>Globalization leads to what scholars call <span class="keyword">cultural hybridization</span>—the mixing of cultural elements to create new forms. This is evident in phenomena like:</p>
+                                
+                                <ul>
+                                    <li><span class="highlight">World music:</span> Blending traditional musical styles from different cultures</li>
+                                    <li><span class="highlight">Fusion cuisine:</span> Combining ingredients and techniques from multiple culinary traditions</li>
+                                    <li><span class="highlight">Transnational identities:</span> People who maintain multiple cultural affiliations across national borders</li>
+                                    <li><span class="highlight">Glocalization:</span> The adaptation of global products to local contexts (e.g., McDonald's offering vegetarian options in India)</li>
+                                </ul>
+                                
+                                <p>For educators, this means preparing students not for contact with "pure" or "authentic" foreign cultures but for engagement with the complex, hybrid cultural realities of our globalized world. It also means helping students develop the critical skills to navigate the power dynamics of globalization—to recognize cultural imperialism, to value linguistic and cultural diversity, and to engage in global issues ethically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Global 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>English as a Global Lingua Franca: Opportunities and Challenges</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>As Crystal (2003) documents, English has emerged as the world's primary language for international communication in domains including business, science, technology, diplomacy, tourism, and entertainment. This status as a <span class="keyword">global lingua franca</span> creates both significant opportunities and serious challenges for intercultural communication.</p>
+                            
+                            <p>The opportunities are considerable: English provides a common language that enables people from different linguistic backgrounds to communicate directly. It facilitates international collaboration, access to global knowledge, participation in global debates, and mobility across borders. For many, learning English represents access to economic opportunities, education, and cultural resources.</p>
+                            
+                            <p>However, the dominance of English also raises important concerns:</p>
+                            
+                            <div class="sub-section">
+                                <h4>1. Linguistic and Cultural Imperialism</h4>
+                                <p>The spread of English is often accompanied by the spread of Anglo-American cultural values, business practices, and ways of thinking. This can marginalize local languages and cultures, creating pressure to adopt Western norms. Phillipson's concept of "linguistic imperialism" highlights how language policies can serve political and economic interests, with English often displacing other languages in education, government, and business.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>2. Inequality in Communication</h4>
+                                <p>When English is used as a lingua franca, native speakers have inherent advantages in fluency, vocabulary, and cultural knowledge of English-speaking countries. Non-native speakers may struggle to express nuanced ideas or may be judged for their accents and grammatical errors. This creates power imbalances in international meetings, academic conferences, and business negotiations.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>3. Loss of Linguistic Diversity</h4>
+                                <p>As English expands, smaller languages face pressure and possible extinction. UNESCO estimates that half of the world's approximately 6,000 languages may disappear by the end of this century. Language loss represents not just the loss of communication tools but of unique cultural knowledge, worldviews, and identities.</p>
+                            </div>
+                            
+                            <div class="sub-section">
+                                <h4>4. The Need for Intercultural Competence with English</h4>
+                                <p>Simply knowing English is insufficient for effective global communication. Users of English as a lingua franca need intercultural skills to navigate different communication styles, to adapt their language for diverse audiences, to recognize when misunderstandings occur, and to mediate between different cultural perspectives. They need to develop what Baker (2015) calls "intercultural awareness"—understanding how culture influences communication in English lingua franca contexts.</p>
+                            </div>
+                            
+                            <div class="pedagogical-implication">
+                                <div class="implication-title">Educational Response:</div>
+                                <p>Teaching English for intercultural communication means moving beyond native-speaker models to prepare students to use English flexibly with diverse interlocutors. It involves developing metalinguistic awareness (understanding how language works), pragmatic competence (using language appropriately in context), and critical awareness of the politics of English. Students should learn strategies for successful lingua franca communication, such as paraphrasing, checking understanding, accommodating to different proficiency levels, and using nonverbal cues effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: INTERCULTURAL SPEAKER -->
+        <section id="intercultural-speaker" class="section">
+            <h2>💬 6. The Intercultural Speaker: A New Ideal for Language Learning</h2>
+            <p><span class="lecture-tag">LECTURE 3</span> The concept of the "intercultural speaker" represents a paradigm shift in language education, moving beyond the native speaker as the ultimate model.</p>
+            
+            <div class="accordion">
+                <!-- Speaker 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>From Native Speaker to Intercultural Speaker Model</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>For much of the history of language teaching, the <span class="keyword">native speaker</span> represented the ideal—the perfect model of linguistic competence and cultural authenticity. Students were expected to approximate native-like pronunciation, master native-like grammar, and adopt native-like cultural behaviors. This model assumed that language learning meant assimilating to a target culture.</p>
+                            
+                            <p>Contemporary applied linguistics has challenged this model for several reasons. First, in our globalized world, English and other major languages are used more often between non-native speakers than between native and non-native speakers. Second, the native speaker model suggests that there is one "correct" way to speak a language, ignoring the immense diversity within any language community. Third, this model positions learners as deficient—always falling short of an unattainable ideal. Fourth, it separates language from the learner's own cultural identity, expecting them to become someone else rather than adding new linguistic and cultural resources to their existing identity.</p>
+                            
+                            <p>In contrast, the <span class="important">intercultural speaker</span> model, developed by scholars like Byram and Kramsch, offers a more realistic and empowering goal. The intercultural speaker:</p>
+                            
+                            <ul>
+                                <li>Has a <span class="highlight">plurilingual and pluricultural competence</span>—ability to move between languages and cultures</li>
+                                <li>Functions as a <span class="highlight">mediator</span> between cultures rather than an imitator of one culture</li>
+                                <li>Maintains their own cultural identity while developing understanding of others</li>
+                                <li>Is comfortable in <span class="highlight">"third spaces"</span>—the in-between zones where cultures meet and interact</li>
+                                <li>Can explain their own culture to others and interpret other cultures for their community</li>
+                                <li>Recognizes that misunderstandings are inevitable and sees them as learning opportunities</li>
+                            </ul>
+                            
+                            <div class="detailed-explanation">
+                                <p>This shift has profound implications for teaching. Instead of evaluating students by how closely they approximate a native speaker, we evaluate their ability to use language effectively in intercultural situations. Instead of teaching cultural facts about target countries, we develop skills for cultural exploration and mediation. Instead of expecting students to adopt a new cultural identity, we help them develop flexible identities that can navigate multiple cultural contexts.</p>
+                                
+                                <p>The intercultural speaker model is particularly relevant in contexts like Algeria, where English is learned not primarily to communicate with British or Americans but as a tool for international communication in business, academia, and technology with diverse global partners. Algerian English learners will more likely use English with Chinese engineers, Brazilian businesspeople, or Nigerian academics than with British or American native speakers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4>The "Inter" Space and Third Culture Creation</h4>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="elaborate-content">
+                            <p>Central to the concept of the intercultural speaker is the idea of the <span class="keyword">"inter" space</span> or <span class="keyword">"third space"</span>—the zone where cultures meet, interact, and potentially create something new. This concept, developed by Homi Bhabha in postcolonial theory and applied to language education by Claire Kramsch, represents a radical departure from traditional views of culture contact.</p>
+                            
+                            <p>Traditional models often view intercultural contact as a meeting between two fixed, bounded cultures (Culture A meets Culture B). In this view, communication involves bridging the gap between separate entities. The "inter" space model, in contrast, sees culture as constantly created through interaction. When people from different cultural backgrounds communicate, they don't just exchange information between separate worlds; they co-create a new, hybrid space with its own emergent norms, meanings, and practices.</p>
+                            
+                            <div class="detailed-explanation">
+                                <p>Consider a virtual team with members from Germany, Algeria, Brazil, and Japan working on a project. They don't simply apply their respective national communication styles. Instead, through negotiation and adaptation, they develop a shared team culture with its own communication rules—perhaps a blend of German precision, Algerian relational emphasis, Brazilian expressiveness, and Japanese consensus-building. This emergent culture is their "third space"—not German, not Algerian, not Brazilian, not Japanese, but something unique to their collaboration.</p>
+                                
+                                <p>The intercultural speaker is someone who thrives in these third spaces. They don't just switch between cultural codes but help create new intercultural spaces. They have what Kramsch calls a "multilingual subject"—a self that is comfortable with ambiguity, open to transformation, and capable of seeing the world from multiple perspectives simultaneously.</p>
+                                
+                                <p>This has important implications for identity. Rather than having to choose between cultural identities (Algerian vs global, traditional vs modern), the intercultural speaker develops a <span class="highlight">transcultural identity</span> that incorporates multiple influences. They might see themselves not as "less Algerian" for speaking English or adapting to international norms, but as "Algerian in a global context"—someone who brings Algerian perspectives to global conversations and global perspectives to Algerian contexts.</p>
+                            </div>
+                            
+                            <div class="example">
+                                <div class="example-title">Educational Application:</div>
+                                <p>Teachers can help students develop comfort in "inter" spaces through activities that require them to negotiate meaning across differences, such as collaborative projects with international partners, role-plays of intercultural mediation, analysis of hybrid cultural products (like world music or fusion literature), and reflection on their own experiences of cultural mixing. The goal is to develop what researchers call "cosmopolitan competence"—the ability to engage productively with cultural difference without losing one's own cultural grounding.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- SECTION 7: SCENARIOS -->
+        <section id="scenarios" class="section">
+            <h2>🎭 7. Practical Scenarios for Analysis</h2>
+            <p>These ten scenarios illustrate common intercultural challenges. For each, consider which theories and concepts from the lectures help explain what's happening and how an interculturally competent person might respond.</p>
+            
+            <div class="scenario-container">
+                <!-- Scenario 1 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">1</span>The Direct Email Conflict
+                    </div>
+                    <p>A German project manager sends a brief email to his Algerian team: "Report incomplete. Fix sections 3-5 by Friday." Team members feel offended by the blunt tone, perceiving it as rude and disrespectful. The German manager is confused by their reaction—he was just being efficient.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">Hall's High vs Low Context Theory</span>: German low-context directness vs Algerian high-context expectation of relational framing. <span class="keyword">Face-saving</span> considerations. <span class="keyword">Different email etiquette norms</span> across cultures. Solution involves developing metapragmatic awareness—understanding that directness and indirectness are cultural, not personal.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 2 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">2</span>The Silent Student Dilemma
+                    </div>
+                    <p>In an international classroom in Canada, Li, a Chinese student, rarely speaks during discussions. The Canadian teacher interprets this as lack of engagement or understanding. Li, however, is actively listening and taking detailed notes, showing respect through attentive silence as taught in her educational culture.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">Hofstede's Power Distance</span>: High power distance cultures expect students to listen respectfully to teachers. <span class="keyword">Different participation norms</span>: Some cultures value speaking, others value listening. <span class="keyword">Silence has different meanings</span> across cultures. Solution involves recognizing multiple forms of participation and creating diverse ways for students to demonstrate engagement.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 3 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">3</span>The Missed Deadline
+                    </div>
+                    <p>A Spanish contractor misses a deadline with an Algerian client because of a family emergency. He apologizes profusely, explaining family obligations come first. The Algerian client sees this as unprofessional and unreliable, believing business commitments should be honored regardless of personal circumstances.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">Monochronic vs Polychronic Time</span>: Linear time perception vs fluid time perception. <span class="keyword">Individualism vs Collectivism</span>: Individual responsibility vs family obligations. <span class="keyword">Different work-life balance norms</span>. Solution involves explicit discussion of expectations and development of shared team norms that respect both perspectives.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 4 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">4</span>The Virtual Meeting Challenge
+                    </div>
+                    <p>During a Zoom meeting between Japanese and American colleagues, the Japanese participants rarely speak unless directly addressed. Americans dominate the conversation. The Americans think their Japanese colleagues have nothing to contribute, while the Japanese are waiting for appropriate turns and consensus signals that don't translate well to video conferencing.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">Digital communication limitations</span> for high-context cultures. <span class="keyword">Different meeting participation styles</span>. <span class="keyword">Loss of non-verbal cues</span> in virtual settings. <span class="keyword">Consensus-building vs individual contribution</span> styles. Solution involves adapting meeting formats for virtual intercultural settings, using chat functions, and establishing explicit turn-taking protocols.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 5 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">5</span>The Feedback Misunderstanding
+                    </div>
+                    <p>An American manager gives direct critical feedback to her Algerian employee during a team meeting: "Your presentation lacked clear structure." The employee feels publicly shamed and loses motivation. The manager is confused—she was just being honest and helpful.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">Face-saving across cultures</span>. <span class="keyword">Public vs private criticism norms</span>. <span class="keyword">Direct vs indirect feedback styles</span>. <span class="keyword">Different notions of "helpfulness"</span> in professional development. Solution involves learning appropriate feedback protocols for different cultural contexts and asking about preferences.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 6 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">6</span>The "Yes" That Means "Maybe"
+                    </div>
+                    <p>A Filipino team member consistently says "yes" to requests from his American manager, even when he's unsure he can deliver. The manager takes these as firm commitments. When deadlines are missed, the manager sees the employee as unreliable, while the employee was trying to avoid saying "no" to preserve harmony and respect.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">High power distance communication patterns</span>. <span class="keyword">Face-saving and indirect refusals</span>. <span class="keyword">Different meanings of "yes"</span> across cultures. <span class="keyword">Harmony preservation vs task completion priorities</span>. Solution involves developing shared understanding of commitment language and creating safe ways to express limitations.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 7 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">7</span>The Group Work Conflict
+                    </div>
+                    <p>In a multicultural student project, American and German students want to divide tasks and work independently. Saudi and Korean students want to discuss everything as a group until consensus is reached. Both sides think the other is wasting time or being inefficient.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">Individualism vs Collectivism</span> in teamwork. <span class="keyword">Task orientation vs relationship orientation</span>. <span class="keyword">Different decision-making processes</span>. <span class="keyword">Efficiency defined differently</span> across cultures. Solution involves explicit negotiation of team processes and development of hybrid approaches that respect both styles.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 8 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">8</span>The Cultural Adaptation Journey
+                    </div>
+                    <p>An Algerian student studying in France experiences intense homesickness and frustration after the initial excitement wears off. She finds French directness rude, the food strange, and the social interactions superficial. She's considering returning home, feeling she'll never fit in.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">Culture shock stages</span> (honeymoon, frustration, adjustment, adaptation). <span class="keyword">Reverse culture shock</span> upon return. <span class="keyword">Acculturation strategies</span> (assimilation, separation, integration, marginalization). <span class="keyword">Identity negotiation</span> in new cultural contexts. Solution involves recognizing culture shock as normal, seeking support, and developing bicultural competence.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 9 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">9</span>The Language Power Dynamic
+                    </div>
+                    <p>In an international conference where English is the working language, native English speakers dominate discussions while non-native speakers struggle to express complex ideas. Even when non-natives speak, their contributions are often overlooked or misunderstood. The conference outcomes reflect primarily Anglo-American perspectives.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">English as Lingua Franca power dynamics</span>. <span class="keyword">Linguistic imperialism</span> concerns. <span class="keyword">Communication accommodation strategies</span>. <span class="keyword">Inclusive meeting practices</span>. Solution involves conscious efforts to equalize participation, using facilitation techniques that ensure all voices are heard, and developing ELF (English as Lingua Franca) awareness among all participants.</p>
+                    </div>
+                </div>
+                
+                <!-- Scenario 10 -->
+                <div class="scenario">
+                    <div class="scenario-title">
+                        <span class="scenario-number">10</span>The Hybrid Identity Negotiation
+                    </div>
+                    <p>A French-Algerian professional feels she's "not Algerian enough" when visiting family in Algeria and "not French enough" when working in Paris. She creates her own communication style that blends direct French business language with Algerian relational elements, but constantly feels pressure to choose one identity over the other.</p>
+                    <div class="analysis">
+                        <div class="analysis-title">Key Analysis Concepts:</div>
+                        <p><span class="keyword">Third space and hybrid identity</span>. <span class="keyword">Code-switching and style-shifting</span> as intercultural skills. <span class="keyword">Transcultural competence</span>. <span class="keyword">Identity as performance vs essence</span>. Solution involves recognizing hybridity as a strength, developing comfort with multiple cultural affiliations, and challenging essentialist views of culture and identity.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pedagogical-implication" style="margin-top: var(--spacing-lg); background: #e3f2fd; border-left-color: #2196f3;">
+                <div class="implication-title">📝 Exam Essay Writing Strategy:</div>
+                <ol>
+                    <li><strong>Identify Core Concepts:</strong> Start by naming 2-3 key theories or concepts from the lectures that explain the scenario (e.g., "This situation illustrates Hall's high-context vs low-context communication theory combined with Hofstede's power distance dimension.")</li>
+                    <li><strong>Apply Theory to Analysis:</strong> Explain specifically how these concepts help us understand what's happening. ("The German manager's direct email style reflects low-context communication norms, while the Algerian team's expectation of relational framing reflects high-context norms.")</li>
+                    <li><strong>Consider Multiple Perspectives:</strong> Analyze the situation from different cultural viewpoints. ("From a German perspective... From an Algerian perspective...")</li>
+                    <li><strong>Propose Interculturally Competent Responses:</strong> Suggest how someone with intercultural competence would handle the situation, drawing on concepts like cultural adaptation, mediation, perspective-taking, etc.</li>
+                    <li><strong>Connect to Educational Implications:</strong> Discuss what this scenario teaches us about teaching intercultural communication or preparing students for global interactions.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- NAVIGATION BUTTONS -->
+        <div class="quick-nav" style="margin-top: var(--spacing-xl);">
+            <button class="nav-btn" onclick="expandAllSections()">Expand All Sections</button>
+            <button class="nav-btn" onclick="collapseAllSections()">Collapse All Sections</button>
+            <button class="nav-btn" onclick="scrollToSection('definitions')">Back to Start</button>
+            <button class="nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top of Page</button>
+        </div>
+
+        <footer class="footer">
+            <p>📚 M1 Didactics - Intercultural Communication Complete Study Guide</p>
+            <p>Comprehensive coverage of all concepts from Lectures 1, 2, and 3 with detailed explanations</p>
+            <p>Mobile-optimized design • Tap sections to expand • Use navigation for easy access</p>
+            <p style="margin-top: var(--spacing-sm); font-size: 0.9rem; color: #777;">Based on: Gudykunst & Kim (2017), Samovar et al. (2015), Hall (1976), Hofstede (2001), Byram (1997), Appadurai (1996), Kramsch (2009)</p>
+        </footer>
+    </div>
+
+    <script>
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.accordion-icon');
+            
+            content.classList.toggle('active');
+            icon.textContent = content.classList.contains('active') ? '▲' : '▼';
+            
+            // Smooth scroll to opened section on mobile
+            if (content.classList.contains('active') && window.innerWidth < 768) {
+                setTimeout(() => {
+                    content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            }
+        }
+        
+        // Navigation function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const yOffset = -90; // Account for sticky header
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+                
+                // Auto-expand first accordion in section on mobile
+                if (window.innerWidth < 768) {
+                    setTimeout(() => {
+                        const firstAccordion = element.querySelector('.accordion-header');
+                        if (firstAccordion && !firstAccordion.nextElementSibling.classList.contains('active')) {
+                            toggleAccordion(firstAccordion);
+                        }
+                    }, 500);
+                }
+            }
+        }
+        
+        // Expand/Collapse all
+        function expandAllSections() {
+            document.querySelectorAll('.accordion-content').forEach(content => {
+                content.classList.add('active');
+            });
+            document.querySelectorAll('.accordion-icon').forEach(icon => {
+                icon.textContent = '▲';
+            });
+        }
+        
+        function collapseAllSections() {
+            document.querySelectorAll('.accordion-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.accordion-icon').forEach(icon => {
+                icon.textContent = '▼';
+            });
+        }
+        
+        // Auto-expand first section on mobile for better UX
+        window.addEventListener('load', function() {
+            if (window.innerWidth < 768) {
+                setTimeout(() => {
+                    const firstHeader = document.querySelector('.accordion-header');
+                    if (firstHeader) {
+                        toggleAccordion(firstHeader);
+                    }
+                }, 500);
+            }
+        });
+        
+        // Touch optimization
+        document.addEventListener('touchstart', function() {}, {passive: true});
+        
+        // Keep header visible but not overlapping
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            } else {
+                header.style.boxShadow = 'var(--shadow)';
+            }
+        });
+    </script>
+</body>
+</html>
